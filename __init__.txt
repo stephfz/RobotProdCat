@@ -1,0 +1,6 @@
+*** Settings ***
+Resource    ../resource.txt
+
+
+Test Setup      Open Browser To Login Page
+Test Teardown   Close Browser

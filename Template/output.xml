@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20131127 16:20:16.571" generator="Robot 2.8.1 (Python 2.7.3 on win32)">
+<suite source="C:\Tzt\Robot\ProductCatalogDemo\Template\FacetTemplates.txt" id="s1" name="FacetTemplates">
+<test id="s1-t1" name="[TestSetup]">
+<kw type="kw" name="resource.Login as">
+<doc></doc>
+<arguments>
+<arg>Dan</arg>
+<arg>Dan</arg>
+</arguments>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:16.660" level="INFO">Opening browser 'Chrome' to base url 'http://dtv.plm.com:1234'</msg>
+<status status="PASS" endtime="20131127 16:20:18.269" starttime="20131127 16:20:16.660"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20131127 16:20:18.423" starttime="20131127 16:20:18.269"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20131127 16:20:18.424" starttime="20131127 16:20:18.423"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Composer</arg>
+</arguments>
+<msg timestamp="20131127 16:20:19.447" level="INFO">Page title is 'Composer'.</msg>
+<status status="PASS" endtime="20131127 16:20:19.447" starttime="20131127 16:20:18.424"></status>
+</kw>
+<status status="PASS" endtime="20131127 16:20:19.447" starttime="20131127 16:20:16.660"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:19.448" level="INFO">Typing text 'Dan' into text field 'username'</msg>
+<status status="PASS" endtime="20131127 16:20:22.567" starttime="20131127 16:20:19.447"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:22.568" level="INFO">Typing text 'Dan' into text field 'password'</msg>
+<status status="PASS" endtime="20131127 16:20:25.692" starttime="20131127 16:20:22.567"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=input[type='submit']</arg>
+</arguments>
+<msg timestamp="20131127 16:20:25.692" level="INFO">Clicking element 'css=input[type='submit']'.</msg>
+<status status="PASS" endtime="20131127 16:20:27.821" starttime="20131127 16:20:25.692"></status>
+</kw>
+<status status="PASS" endtime="20131127 16:20:27.821" starttime="20131127 16:20:16.659"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 16:20:27.822" critical="yes" starttime="20131127 16:20:16.658"></status>
+</test>
+<test id="s1-t2" name="Create New Facet">
+<kw type="kw" name="resource.Open Facets">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Product Composer</arg>
+</arguments>
+<msg timestamp="20131127 16:20:27.828" level="INFO">Clicking link 'Product Composer'.</msg>
+<status status="PASS" endtime="20131127 16:20:30.937" starttime="20131127 16:20:27.828"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LEFTMENU.FACETS}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:30.939" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Facets')]'.</msg>
+<status status="PASS" endtime="20131127 16:20:33.041" starttime="20131127 16:20:30.939"></status>
+</kw>
+<status status="PASS" endtime="20131127 16:20:33.041" starttime="20131127 16:20:27.827"></status>
+</kw>
+<kw type="kw" name="resource.Fill Up Facet Form">
+<doc></doc>
+<arguments>
+<arg>This Facet</arg>
+<arg>TestFacet</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${FACET.CREATE}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:33.044" level="INFO">Clicking button 'new_data_template'.</msg>
+<status status="PASS" endtime="20131127 16:20:37.178" starttime="20131127 16:20:33.043"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${FACET.FORM.NAME}</arg>
+<arg>${facetname}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:37.179" level="INFO">Typing text 'This Facet' into text field 'new-name'</msg>
+<status status="PASS" endtime="20131127 16:20:40.343" starttime="20131127 16:20:37.178"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${FACET.FORM.DESCRIPTION}</arg>
+<arg>${facetdescription}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:40.344" level="INFO">Typing text 'TestFacet' into text field 'description'</msg>
+<status status="PASS" endtime="20131127 16:20:43.492" starttime="20131127 16:20:40.343"></status>
+</kw>
+<status status="PASS" endtime="20131127 16:20:43.492" starttime="20131127 16:20:33.042"></status>
+</kw>
+<kw type="kw" name="resource.Add Property">
+<doc></doc>
+<arguments>
+<arg>Boolean</arg>
+<arg>SiNo</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${FACET.FORM.CREATE_PROPERTY}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:43.495" level="INFO">Clicking button 'btnFacetTemplateAddProperty'.</msg>
+<status status="PASS" endtime="20131127 16:20:47.633" starttime="20131127 16:20:43.494"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Select From List">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>${FACET.PROPERTY.TYPE}</arg>
+<arg>${propertytype}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:47.634" level="INFO">Selecting option(s) 'Boolean' from list 'type'.</msg>
+<status status="PASS" endtime="20131127 16:20:54.852" starttime="20131127 16:20:47.633"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${FACET.PROPERTY.NAME}</arg>
+<arg>${propertyname}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:54.853" level="INFO">Typing text 'SiNo' into text field 'css=#property-properties &gt; div.field &gt; input[type="text"]'</msg>
+<status status="PASS" endtime="20131127 16:20:58.000" starttime="20131127 16:20:54.852"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${FACET.PROPERTY.SAVE}</arg>
+</arguments>
+<msg timestamp="20131127 16:20:58.001" level="INFO">Clicking button 'btnSaveProperty'.</msg>
+<status status="PASS" endtime="20131127 16:21:02.155" starttime="20131127 16:20:58.000"></status>
+</kw>
+<status status="PASS" endtime="20131127 16:21:02.155" starttime="20131127 16:20:43.493"></status>
+</kw>
+<kw type="kw" name="resource.Save Facet">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${FACET.FORM.SAVE}</arg>
+</arguments>
+<msg timestamp="20131127 16:21:02.157" level="INFO">Clicking button 'btnSaveFacetTemplate'.</msg>
+<status status="PASS" endtime="20131127 16:21:06.277" starttime="20131127 16:21:02.157"></status>
+</kw>
+<status status="PASS" endtime="20131127 16:21:06.277" starttime="20131127 16:21:02.156"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 16:21:06.277" critical="yes" starttime="20131127 16:20:27.825"></status>
+</test>
+<test id="s1-t3" name="[Teardown]">
+<kw type="kw" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20131127 16:21:08.386" starttime="20131127 16:21:06.279"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 16:21:08.387" critical="yes" starttime="20131127 16:21:06.278"></status>
+</test>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20131127 16:21:08.391" starttime="20131127 16:20:16.571"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="3" id="s1" name="FacetTemplates">FacetTemplates</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

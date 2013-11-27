@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20131127 12:13:14.673" generator="Robot 2.8.1 (Python 2.7.3 on win32)">
+<suite source="C:\Tzt\Robot\ProductCatalogDemo\Catalog\ProductSuite.txt" id="s1" name="ProductSuite">
+<test id="s1-t1" name="[TestSetup]">
+<kw type="kw" name="resource.Login as">
+<doc></doc>
+<arguments>
+<arg>Dan</arg>
+<arg>Dan</arg>
+</arguments>
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:14.762" level="INFO">Opening browser 'Chrome' to base url 'http://dtv.plm.com:1234'</msg>
+<status status="PASS" endtime="20131127 12:13:16.368" starttime="20131127 12:13:14.761"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20131127 12:13:16.517" starttime="20131127 12:13:16.368"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20131127 12:13:16.518" starttime="20131127 12:13:16.517"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Composer</arg>
+</arguments>
+<msg timestamp="20131127 12:13:17.530" level="INFO">Page title is 'Composer'.</msg>
+<status status="PASS" endtime="20131127 12:13:17.530" starttime="20131127 12:13:16.518"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:17.531" starttime="20131127 12:13:14.761"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:17.531" level="INFO">Typing text 'Dan' into text field 'username'</msg>
+<status status="PASS" endtime="20131127 12:13:20.648" starttime="20131127 12:13:17.531"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:20.648" level="INFO">Typing text 'Dan' into text field 'password'</msg>
+<status status="PASS" endtime="20131127 12:13:23.755" starttime="20131127 12:13:20.648"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=input[type='submit']</arg>
+</arguments>
+<msg timestamp="20131127 12:13:23.755" level="INFO">Clicking element 'css=input[type='submit']'.</msg>
+<status status="PASS" endtime="20131127 12:13:25.851" starttime="20131127 12:13:23.755"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:25.852" starttime="20131127 12:13:14.761"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 12:13:25.853" critical="yes" starttime="20131127 12:13:14.760"></status>
+</test>
+<test id="s1-t2" name="New Catalog">
+<kw type="kw" name="resource.Fill Up Catalog Form">
+<doc></doc>
+<arguments>
+<arg>CigniumCatalog</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${PRODCAT.CREATE}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:25.858" level="INFO">Clicking element 'css=i.icon-plus-sign'.</msg>
+<status status="PASS" endtime="20131127 12:13:27.966" starttime="20131127 12:13:25.858"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>catalog-name</arg>
+<arg>${catalogname}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:27.967" level="INFO">Typing text 'CigniumCatalog' into text field 'catalog-name'</msg>
+<status status="PASS" endtime="20131127 12:13:31.206" starttime="20131127 12:13:27.966"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:31.206" starttime="20131127 12:13:25.857"></status>
+</kw>
+<kw type="kw" name="resource.Save New Catalog">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>btnSaveProductCatalog</arg>
+</arguments>
+<msg timestamp="20131127 12:13:31.208" level="INFO">Clicking button 'btnSaveProductCatalog'.</msg>
+<status status="PASS" endtime="20131127 12:13:35.338" starttime="20131127 12:13:31.208"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:35.338" starttime="20131127 12:13:31.207"></status>
+</kw>
+<kw type="kw" name="resource.Verify Catalog has been created">
+<doc></doc>
+<arguments>
+<arg>CigniumCatalog</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Element Text Should Be">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>css=h2.subheading &gt; span</arg>
+<arg>${catalogname}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:35.340" level="INFO">Verifying element 'css=h2.subheading &gt; span' contains exactly text 'CigniumCatalog'.</msg>
+<status status="PASS" endtime="20131127 12:13:37.389" starttime="20131127 12:13:35.340"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:37.389" starttime="20131127 12:13:35.339"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 12:13:37.390" critical="yes" starttime="20131127 12:13:25.856"></status>
+</test>
+<test id="s1-t3" name="Add Category to Catalog">
+<kw type="kw" name="resource.Open Schema">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LEFTMENU.SCHEMA}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:37.395" level="INFO">Clicking element 'css=i.icon-sitemap'.</msg>
+<status status="PASS" endtime="20131127 12:13:39.528" starttime="20131127 12:13:37.395"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:39.528" starttime="20131127 12:13:37.394"></status>
+</kw>
+<kw type="kw" name="resource.Fill Up Category Form">
+<doc></doc>
+<arguments>
+<arg>aNewCategory</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//div[@class='tree-node-main']</arg>
+</arguments>
+<msg timestamp="20131127 12:13:39.530" level="INFO">Clicking element 'xpath=//div[@class='tree-node-main']'.</msg>
+<status status="PASS" endtime="20131127 12:13:41.640" starttime="20131127 12:13:39.530"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[3]</arg>
+</arguments>
+<msg timestamp="20131127 12:13:41.641" level="INFO">Clicking element 'xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[3]'.</msg>
+<status status="PASS" endtime="20131127 12:13:43.759" starttime="20131127 12:13:41.640"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>category-name</arg>
+<arg>${categoryName}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:43.760" level="INFO">Typing text 'aNewCategory' into text field 'category-name'</msg>
+<status status="PASS" endtime="20131127 12:13:46.933" starttime="20131127 12:13:43.759"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:46.933" starttime="20131127 12:13:39.529"></status>
+</kw>
+<kw type="kw" name="resource.Save New Product Category">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>btnSaveCategory</arg>
+</arguments>
+<msg timestamp="20131127 12:13:46.935" level="INFO">Clicking button 'btnSaveCategory'.</msg>
+<status status="PASS" endtime="20131127 12:13:51.062" starttime="20131127 12:13:46.935"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:51.063" starttime="20131127 12:13:46.934"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 12:13:51.064" critical="yes" starttime="20131127 12:13:37.393"></status>
+</test>
+<test id="s1-t4" name="Launch Product">
+<kw type="kw" name="resource.Open Launch Product">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LEFTMENU.LAUNCH_PRODUCT}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:51.073" level="INFO">Clicking element 'css=i.icon-rocket'.</msg>
+<status status="PASS" endtime="20131127 12:13:53.215" starttime="20131127 12:13:51.072"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:13:53.215" starttime="20131127 12:13:51.071"></status>
+</kw>
+<kw type="kw" name="resource.Fill Up Product Form">
+<doc></doc>
+<arguments>
+<arg>New Product</arg>
+<arg>aNewCategory</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>product-name</arg>
+<arg>${productName}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:53.217" level="INFO">Typing text 'New Product' into text field 'product-name'</msg>
+<status status="PASS" endtime="20131127 12:13:56.364" starttime="20131127 12:13:53.217"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Select From List">
+<doc>Selects `*items` from list identified by `locator`</doc>
+<arguments>
+<arg>product-template-category</arg>
+<arg>Root » ${categoryName}</arg>
+</arguments>
+<msg timestamp="20131127 12:13:56.365" level="INFO">Selecting option(s) 'Root » aNewCategory' from list 'product-template-category'.</msg>
+<status status="PASS" endtime="20131127 12:14:03.513" starttime="20131127 12:13:56.364"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=i.icon-save</arg>
+</arguments>
+<msg timestamp="20131127 12:14:03.514" level="INFO">Clicking element 'css=i.icon-save'.</msg>
+<status status="PASS" endtime="20131127 12:14:05.608" starttime="20131127 12:14:03.513"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:14:05.609" starttime="20131127 12:13:53.216"></status>
+</kw>
+<kw type="kw" name="resource.Save Draft Product Version">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${PRODCAT.SAVE_VERSION}</arg>
+</arguments>
+<msg timestamp="20131127 12:14:05.612" level="INFO">Clicking element 'xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]'.</msg>
+<status status="PASS" endtime="20131127 12:14:07.726" starttime="20131127 12:14:05.612"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:14:07.726" starttime="20131127 12:14:05.612"></status>
+</kw>
+<kw type="kw" name="resource.Verify Product is Listed on Live Products List">
+<doc></doc>
+<arguments>
+<arg>New Product</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//a[@class='back-button']</arg>
+</arguments>
+<msg timestamp="20131127 12:14:07.727" level="INFO">Clicking element 'xpath=//a[@class='back-button']'.</msg>
+<status status="PASS" endtime="20131127 12:14:09.875" starttime="20131127 12:14:07.727"></status>
+</kw>
+<kw type="kw" name="resource.Open Products List">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LEFTMENU.PRODUCTS}</arg>
+</arguments>
+<msg timestamp="20131127 12:14:09.876" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Products')]'.</msg>
+<status status="PASS" endtime="20131127 12:14:11.987" starttime="20131127 12:14:09.876"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:14:11.988" starttime="20131127 12:14:09.875"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(), '${productName}')]</arg>
+</arguments>
+<status status="PASS" endtime="20131127 12:14:13.010" starttime="20131127 12:14:11.988"></status>
+</kw>
+<status status="PASS" endtime="20131127 12:14:13.010" starttime="20131127 12:14:07.727"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 12:14:13.011" critical="yes" starttime="20131127 12:13:51.070"></status>
+</test>
+<test id="s1-t5" name="[Teardown]">
+<kw type="kw" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20131127 12:14:15.141" starttime="20131127 12:14:13.015"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20131127 12:14:15.142" critical="yes" starttime="20131127 12:14:13.014"></status>
+</test>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20131127 12:14:15.146" starttime="20131127 12:13:14.673"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="5" id="s1" name="ProductSuite">ProductSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

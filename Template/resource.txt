@@ -1,0 +1,44 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../resource.txt
+
+
+
+
+*** Variables ***
+
+#UI Elements
+${FACET.CREATE}  			new_data_template
+${FACET.FORM.NAME}  			new-name
+${FACET.FORM.DESCRIPTION}  			description
+${FACET.FORM.CREATE_PROPERTY}  			btnFacetTemplateAddProperty
+${FACET.FORM.SAVE}  			btnSaveFacetTemplate
+${FACET.PROPERTY.TYPE}  			type
+${FACET.PROPERTY.NAME}  			css=#property-properties > div.field > input[type="text"]  			
+${FACET.PROPERTY.SAVE}  			btnSaveProperty
+
+
+
+*** Keywords ***
+
+
+Open Facets
+	Click Link    Product Composer
+	Click Element    ${LEFTMENU.FACETS}    
+
+
+
+Fill Up Facet Form  [Arguments]  ${facetname}   ${facetdescription}
+	Click Button	${FACET.CREATE}    
+    Input Text	${FACET.FORM.NAME}  ${facetname}  
+    Input Text  ${FACET.FORM.DESCRIPTION}  ${facetdescription}
+
+Save Facet
+	Click Button	${FACET.FORM.SAVE} 		   	 
+
+
+Add Property  [Arguments]  ${propertytype}   ${propertyname}
+	Click Button   ${FACET.FORM.CREATE_PROPERTY}
+	Select From List   ${FACET.PROPERTY.TYPE}   ${propertytype}
+	Input Text   ${FACET.PROPERTY.NAME}   ${propertyname}           
+	Click Button   ${FACET.PROPERTY.SAVE}   

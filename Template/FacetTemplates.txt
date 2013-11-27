@@ -1,0 +1,16 @@
+*** Settings ***
+
+Resource          resource.txt
+
+*** Test Cases ***
+
+[TestSetup]    Login as    Dan    Dan
+
+Create New Facet
+	Open Facets
+    Fill Up Facet Form   This Facet   TestFacet
+    Add Property   Boolean   SiNo
+    Save Facet
+
+
+[Teardown]    Close Browser

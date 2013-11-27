@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20131125 11:41:25.200" generator="Robot 2.8.1 (Python 2.7.3 on win32)">
+<suite source="C:\Tzt\Robot\ProductCatalogDemo\valid_login.txt" id="s1" name="Valid Login">
+<test id="s1-t1" name="Valid Login">
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20131125 11:41:25.289" level="INFO">Opening browser 'Chrome' to base url 'http://dtv.plm.com:1234'</msg>
+<status status="PASS" endtime="20131125 11:41:26.923" starttime="20131125 11:41:25.289"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20131125 11:41:27.074" starttime="20131125 11:41:26.924"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20131125 11:41:27.075" starttime="20131125 11:41:27.075"></status>
+</kw>
+<kw type="kw" name="resource.Login Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Composer</arg>
+</arguments>
+<msg timestamp="20131125 11:41:28.099" level="INFO">Page title is 'Composer'.</msg>
+<status status="PASS" endtime="20131125 11:41:28.099" starttime="20131125 11:41:27.076"></status>
+</kw>
+<status status="PASS" endtime="20131125 11:41:28.099" starttime="20131125 11:41:27.075"></status>
+</kw>
+<status status="PASS" endtime="20131125 11:41:28.099" starttime="20131125 11:41:25.289"></status>
+</kw>
+<kw type="kw" name="resource.Login as">
+<doc></doc>
+<arguments>
+<arg>Dan</arg>
+<arg>Dan</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20131125 11:41:28.101" level="INFO">Typing text 'Dan' into text field 'username'</msg>
+<status status="PASS" endtime="20131125 11:41:31.207" starttime="20131125 11:41:28.101"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20131125 11:41:31.208" level="INFO">Typing text 'Dan' into text field 'password'</msg>
+<status status="PASS" endtime="20131125 11:41:34.334" starttime="20131125 11:41:31.207"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=input[type='submit']</arg>
+</arguments>
+<msg timestamp="20131125 11:41:34.334" level="INFO">Clicking element 'css=input[type='submit']'.</msg>
+<status status="PASS" endtime="20131125 11:41:36.441" starttime="20131125 11:41:34.334"></status>
+</kw>
+<status status="PASS" endtime="20131125 11:41:36.441" starttime="20131125 11:41:28.101"></status>
+</kw>
+<kw type="kw" name="resource.Welcome Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20131125 11:41:37.594" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20131125 11:41:37.594" starttime="20131125 11:41:36.443"></status>
+</kw>
+<status status="PASS" endtime="20131125 11:41:37.594" starttime="20131125 11:41:36.442"></status>
+</kw>
+<kw type="kw" name="resource.Open Product Composer">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Link">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Product Composer</arg>
+</arguments>
+<msg timestamp="20131125 11:41:37.596" level="INFO">Clicking link 'Product Composer'.</msg>
+<status status="PASS" endtime="20131125 11:41:40.699" starttime="20131125 11:41:37.596"></status>
+</kw>
+<status status="PASS" endtime="20131125 11:41:40.699" starttime="20131125 11:41:37.595"></status>
+</kw>
+<kw type="kw" name="resource.Create New Catalog">
+<doc></doc>
+<arguments>
+<arg>NewpCatalor</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=button</arg>
+</arguments>
+<msg timestamp="20131125 11:41:40.700" level="INFO">Clicking element 'css=button'.</msg>
+<status status="PASS" endtime="20131125 11:41:42.818" starttime="20131125 11:41:40.700"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>catalog-name</arg>
+<arg>${catalogname}</arg>
+</arguments>
+<msg timestamp="20131125 11:41:42.819" level="INFO">Typing text 'NewpCatalor' into text field 'catalog-name'</msg>
+<status status="PASS" endtime="20131125 11:41:45.998" starttime="20131125 11:41:42.818"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>btnSaveProductCatalog</arg>
+</arguments>
+<msg timestamp="20131125 11:41:45.998" level="INFO">Clicking button 'btnSaveProductCatalog'.</msg>
+<status status="PASS" endtime="20131125 11:41:50.127" starttime="20131125 11:41:45.998"></status>
+</kw>
+<status status="PASS" endtime="20131125 11:41:50.127" starttime="20131125 11:41:40.700"></status>
+</kw>
+<kw type="kw" name="resource.Open Schema">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=i.icon-sitemap</arg>
+</arguments>
+<msg timestamp="20131125 11:41:50.129" level="INFO">Clicking element 'css=i.icon-sitemap'.</msg>
+<status status="PASS" endtime="20131125 11:41:52.258" starttime="20131125 11:41:50.129"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>class=icon-plus-sign</arg>
+</arguments>
+<msg timestamp="20131125 11:41:52.258" level="INFO">Clicking element 'class=icon-plus-sign'.</msg>
+<kw type="kw" name="Selenium2Library.Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20131125 11:41:53.414" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20131125 11:41:53.415" starttime="20131125 11:41:52.259"></status>
+</kw>
+<msg timestamp="20131125 11:41:53.416" level="FAIL">ValueError: Element locator with prefix 'class' is not supported</msg>
+<status status="FAIL" endtime="20131125 11:41:53.417" starttime="20131125 11:41:52.258"></status>
+</kw>
+<status status="FAIL" endtime="20131125 11:41:53.417" starttime="20131125 11:41:50.128"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20131125 11:41:55.560" starttime="20131125 11:41:53.419"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20131125 11:41:55.561" critical="yes" starttime="20131125 11:41:25.288">ValueError: Element locator with prefix 'class' is not supported</status>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<metadata>
+</metadata>
+<status status="FAIL" endtime="20131125 11:41:55.563" starttime="20131125 11:41:25.201"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" pass="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

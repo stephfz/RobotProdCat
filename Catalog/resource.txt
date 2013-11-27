@@ -1,0 +1,70 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../resource.txt
+
+
+
+
+*** Variables ***
+
+#UI Elements
+${PRODCAT.CREATE}  			css=i.icon-plus-sign
+${PRODCAT.SAVE_VERSION}  			xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]
+${PRODCAT.SAVE_PRODUCT}  			css=i.icon-save 
+
+
+
+
+*** Keywords ***
+
+Open Product Composer
+    Click Link    Product Composer
+
+
+Fill Up Catalog Form  [Arguments]  ${catalogname}
+    Click Element    ${PRODCAT.CREATE} 
+    Input Text    catalog-name    ${catalogname}
+
+Save New Catalog
+    Click Button    btnSaveProductCatalog
+
+Verify Catalog has been created  [Arguments]  ${catalogname}
+    Element Text Should Be    css=h2.subheading > span    ${catalogname}        
+
+
+
+Fill Up Category Form  [Arguments]  ${categoryName}
+    Click Element    xpath=//div[@class='tree-node-main']
+    Click Element    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[3]
+    Input Text    category-name    ${categoryName}  
+
+Save New Product Category
+    Click Button    btnSaveCategory  			
+
+
+Open Schema
+    Click Element    ${LEFTMENU.SCHEMA}
+    
+
+Open Launch Product
+	Click Element   ${LEFTMENU.LAUNCH_PRODUCT}
+
+
+Open Products List
+	Click Element   ${LEFTMENU.PRODUCTS}
+
+
+Fill Up Product Form  [Arguments]  ${productName}  ${categoryName}  
+	Input Text   product-name  ${productName}
+	Select From List   product-template-category   Root » ${categoryName}     
+	Click Element   css=i.icon-save 
+
+	
+
+Save Draft Product Version
+	Click Element   ${PRODCAT.SAVE_VERSION} 
+
+Verify Product is Listed on Live Products List   [Arguments]  ${productName} 
+	Click Element   xpath=//a[@class='back-button']
+	Open Products List
+	Wait Until Page Contains Element   xpath=//span[contains(text(), '${productName}')]
