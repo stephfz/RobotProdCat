@@ -1,0 +1,11 @@
+# Report Files #
+############
+report.html
+log.html
+output.xml
+RobotProdCat/Template/report.html
+RobotProdCat/Template/log.html
+RobotProdCat/Template/output.xml
+RobotProdCat/Catalog/report.html
+RobotProdCat/Catalog/log.html
+RobotProdCat/Catalog/output.xml
