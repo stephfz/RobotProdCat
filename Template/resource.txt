@@ -16,7 +16,7 @@ ${FACET.FORM.SAVE}  			btnSaveFacetTemplate
 ${FACET.PROPERTY.TYPE}  			type
 ${FACET.PROPERTY.NAME}  			css=#property-properties > div.field > input[type="text"]  			
 ${FACET.PROPERTY.SAVE}  			btnSaveProperty
-
+${FACET.PROPERTY_REQUIRED}  			xpath=//span[contains(text(), 'Required')]
 
 
 *** Keywords ***
@@ -40,5 +40,6 @@ Save Facet
 Add Property  [Arguments]  ${propertytype}   ${propertyname}
 	Click Button   ${FACET.FORM.CREATE_PROPERTY}
 	Select From List   ${FACET.PROPERTY.TYPE}   ${propertytype}
-	Input Text   ${FACET.PROPERTY.NAME}   ${propertyname}           
+	Input Text   ${FACET.PROPERTY.NAME}   ${propertyname}
+	Click Element   ${FACET.PROPERTY_REQUIRED}           
 	Click Button   ${FACET.PROPERTY.SAVE}   

@@ -8,8 +8,8 @@ Resource          resource.txt
 
 Create New Facet
 	Open Facets
-    Fill Up Facet Form   This Facet   TestFacet
-    Add Property   Boolean   SiNo
+    Fill Up Facet Form   ThisFacet   TestFacet
+    Add Property   Decimal   MyDec
     Save Facet
 
 
