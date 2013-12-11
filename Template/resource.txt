@@ -2,44 +2,48 @@
 Library           Selenium2Library
 Resource          ../resource.txt
 
-
-
-
 *** Variables ***
-
 #UI Elements
-${FACET.CREATE}  			new_data_template
-${FACET.FORM.NAME}  			new-name
-${FACET.FORM.DESCRIPTION}  			description
-${FACET.FORM.CREATE_PROPERTY}  			btnFacetTemplateAddProperty
-${FACET.FORM.SAVE}  			btnSaveFacetTemplate
-${FACET.PROPERTY.TYPE}  			type
-${FACET.PROPERTY.NAME}  			css=#property-properties > div.field > input[type="text"]  			
-${FACET.PROPERTY.SAVE}  			btnSaveProperty
-${FACET.PROPERTY_REQUIRED}  			xpath=//span[contains(text(), 'Required')]
-
+${FACET.CREATE}    new_data_template
+${FACET.FORM.NAME}    new-name
+${FACET.FORM.DESCRIPTION}    description
+${FACET.FORM.CREATE_PROPERTY}    btnFacetTemplateAddProperty
+${FACET.FORM.SAVE}    btnSaveFacetTemplate
+${FACET.PROPERTY.TYPE}    type
+${FACET.PROPERTY.NAME}    css=#property-properties > div.field > input[type="text"]
+${FACET.PROPERTY.SAVE}    btnSaveProperty
+${FACET.PROPERTY_REQUIRED}    xpath=//span[contains(text(), 'Required')]
+${FACET.PROPERTY_UNIQUE}    xpath=//span[contains(text(), 'Unique')]
 
 *** Keywords ***
-
-
 Open Facets
-	Click Link    Product Composer
-	Click Element    ${LEFTMENU.FACETS}    
+    Click Link    Product Composer
+    Click Element    ${LEFTMENU.FACETS}
 
-
-
-Fill Up Facet Form  [Arguments]  ${facetname}   ${facetdescription}
-	Click Button	${FACET.CREATE}    
-    Input Text	${FACET.FORM.NAME}  ${facetname}  
-    Input Text  ${FACET.FORM.DESCRIPTION}  ${facetdescription}
+Fill Up Facet Form
+    [Arguments]    ${facetname}    ${facetdescription}
+    Click Button    ${FACET.CREATE}
+    Input Text    ${FACET.FORM.NAME}    ${facetname}
+    Input Text    ${FACET.FORM.DESCRIPTION}    ${facetdescription}
 
 Save Facet
-	Click Button	${FACET.FORM.SAVE} 		   	 
+    Click Button    ${FACET.FORM.SAVE}
 
+Add Property
+    [Arguments]    ${propertytype}    ${propertyname}    ${isrequired}    ${isunique}
+    Click Button    ${FACET.FORM.CREATE_PROPERTY}
+    Select From List    ${FACET.PROPERTY.TYPE}    ${propertytype}
+    Input Text    ${FACET.PROPERTY.NAME}    ${propertyname}
+    Run Keyword if    '${isrequired}'=='isRequired'    Mark as Required
+    Run Keyword if    '${isunique}'=='isUnique'    Mark as Unique
+    Click Button    ${FACET.PROPERTY.SAVE}
 
-Add Property  [Arguments]  ${propertytype}   ${propertyname}
-	Click Button   ${FACET.FORM.CREATE_PROPERTY}
-	Select From List   ${FACET.PROPERTY.TYPE}   ${propertytype}
-	Input Text   ${FACET.PROPERTY.NAME}   ${propertyname}
-	Click Element   ${FACET.PROPERTY_REQUIRED}           
-	Click Button   ${FACET.PROPERTY.SAVE}   
+Mark as Required
+    Click Element    ${FACET.PROPERTY_REQUIRED}
+
+Mark as Unique
+    Click Element    ${FACET.PROPERTY_UNIQUE}
+
+Verify Facet was created
+    [Arguments]    ${facetname}
+    Wait Until Page Contains Element    xpath=//span[contains(text(), '${facetname}')]

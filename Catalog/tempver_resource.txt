@@ -1,0 +1,48 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          resource.txt
+Resource          ../resource.txt
+
+*** Variables ***
+#UI Elements
+${TEMPVER.NEW_VERSION}    css=i.icon-plus-sign
+${TEMPVER.VERSION_EFFECTIVE_FROM}    effective_start
+${TEMPVER.VERSION_EFFECTIVE_UNTIL}    effective_until
+${TEMPVER.VERSION_SAVE}    xpath=id('modal-wrapper')/div/form/fieldset[2]/nav/button[1]
+${PRODCAT.CREATE_NEW_VERSION}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[4]
+${PRODLIST.EDIT_BUTTON}    //div[@id='applicationHost']/div/div/section/div/h1/nav/button[1]
+${TEMPVER.ALERT_SECTION}    css=div.action-alert.error
+
+*** Keywords ***
+Edit Product
+    [Arguments]    ${catalogName}    ${productName}
+    Open Product Composer
+    Open Products List
+    Click Element    xpath=//span[contains(text(), '${productName}')]
+    Click Button    ${PRODLIST.EDIT_BUTTON}
+
+Fill Up New Version Form
+    [Arguments]    ${effectivefromdate}    ${effectiveuntildate}
+    Click Element    ${PRODCAT.CREATE_NEW_VERSION}
+
+Save Version
+    Click Button    ${TEMPVER.VERSION_SAVE}
+
+Select Version To Archive
+    [Arguments]    ${short_effective_date}
+    Click Element    xpath=//span[contains(text(), '${short_effective_date}')]
+    Click Button    css=i.icon-remove-sign
+    Click Button    css=div.messageContents > nav.inline-toolbar > button
+
+Verify New Version Created
+    [Arguments]    ${effectivefromdateshort}
+    Wait Until Element Is Visible    xpath=//span[contains(text(), '${effectivefromdateshort}')]
+
+Verify New Version cannot be created
+    Fill Up New Version Form
+    Save Version
+    Page Should Contain Element    ${TEMPVER.ALERT_SECTION}
+
+Verify Version has been archived
+    [Arguments] ${effectivefromdateshort}
+    Page Should Not Contain Element    xpath=//span[contains(text(), '${effectivefromdateshort}')]

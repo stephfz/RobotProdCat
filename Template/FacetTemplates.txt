@@ -1,16 +1,22 @@
 *** Settings ***
-
 Resource          resource.txt
 
-*** Test Cases ***
+*** Variables ***
+${facet_name}     December 18, 2013
 
-[TestSetup]    Login as    Dan    Dan
+*** Test Cases ***
+[TestSetup]
+    Login as    Dan    Dan
 
 Create New Facet
-	Open Facets
-    Fill Up Facet Form   ThisFacet   TestFacet
-    Add Property   Decimal   MyDec
+    Open Facets
+    Fill Up Facet Form    ${facet_name}    TestFacet
+    Add Property    Date    MyDate    isRequired    notUnique
+    Add Property    Decimal    MyDec    isRequired    notUnique
+    Add Property    String    MyString    isRequired    notUnique
+    Add Property    Number    MyNumber    isRequired    notUnique
     Save Facet
+    Verify Facet was created    ${facet_name}
 
-
-[Teardown]    Close Browser
+[Teardown]
+    Close Browser

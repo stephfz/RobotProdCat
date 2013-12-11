@@ -1,0 +1,32 @@
+*** Settings ***
+Resource          tempver_resource.txt
+
+*** Variables ***
+${version_start_date}    December 18, 2013
+${version_end_date}    December 31, 2013
+${start_date_month}    December 18, 2013
+${start_date_day}    18
+${start_date_year}    ${EMPTY}
+${short_effective_date}    Dec 11, 2013
+
+*** Test Cases ***
+[TestSetup]
+    Login as    Dan    Dan
+
+Create New Version
+    Edit Product    CignumCatalog    New Product
+    Fill Up New Version Form    ${version_start_date}    ${EMPTY}
+    Save Version
+    Verify New Version Created    ${short_effective_date}
+
+Archive Version
+    Select Version To Archive    ${short_effective_date}
+    Verify Version has been archived    ${short_effective_date}
+
+Create Final Version
+    Fill Up New Version Form    ${version_start_date}    ${version_start_date}
+    Save Version
+    Verify New Version cannot be created
+
+[Teardown]
+    Close Browser

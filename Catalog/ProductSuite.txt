@@ -1,29 +1,25 @@
 *** Settings ***
-
 Resource          resource.txt
 
 *** Test Cases ***
+[TestSetup]
+    Login as    Dan    Dan
 
-[TestSetup]    Login as    Dan    Dan
-
-
-
-New Catalog 
-    Fill Up Catalog Form   CigniumCatalog
+New Catalog
+    Fill Up Catalog Form    CigniumCatalog
     Save New Catalog
-    Verify Catalog has been created   CigniumCatalog 
+    Verify Catalog has been created    CigniumCatalog
 
-
-Add Category to Catalog  
+Add Category to Catalog
     Open Schema
     Fill Up Category Form    aNewCategory
     Save New Product Category
 
-
 Launch Product
-	Open Launch Product
-	Fill Up Product Form    New Product    aNewCategory
-	Save Draft Product Version
-	Verify Product is Listed on Live Products List    New Product
+    Open Launch Product
+    Fill Up Product Form    New Product    aNewCategory
+    Save Draft Product Version
+    Verify Product is Listed on Live Products List    New Product
 
-[Teardown]    Close Browser
+[Teardown]
+    Close Browser
