@@ -1,25 +1,32 @@
 *** Settings ***
 Resource          resource.txt
 
+
+*** Variables ***
+${catalog_name}   CigniumCatalog
+${category_name}   aNewCategory
+${product_name}   NewProduct
+
+
 *** Test Cases ***
 [TestSetup]
     Login as    Dan    Dan
 
 New Catalog
-    Fill Up Catalog Form    CigniumCatalog
+    Fill Up Catalog Form    ${catalog_name}
     Save New Catalog
-    Verify Catalog has been created    CigniumCatalog
+    Verify Catalog has been created    ${catalog_name}
 
 Add Category to Catalog
     Open Schema
-    Fill Up Category Form    aNewCategory
+    Fill Up Category Form    ${category_name}
     Save New Product Category
 
 Launch Product
     Open Launch Product
-    Fill Up Product Form    New Product    aNewCategory
+    Fill Up Product Form    ${product_name}    ${category_name}
     Save Draft Product Version
-    Verify Product is Listed on Live Products List    New Product
+    Verify Product is Listed on Live Products List    ${product_name}
 
 [Teardown]
     Close Browser

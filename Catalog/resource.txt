@@ -5,6 +5,7 @@ Resource          ../resource.txt
 *** Variables ***
 #UI Elements
 ${PRODCAT.CREATE_CATALOG}    css=i.icon-plus-sign
+${PRODCAT.CATALOG_NAME_INPUT}    catalog-name
 ${PRODCAT.SAVE_CATEGORY}    btnSaveCategory
 ${PRODCAT.SAVE_VERSION}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]
 ${PRODCAT.CREATE_PRODUCT}    css=i.icon-save
@@ -16,7 +17,7 @@ Open Product Composer
 Fill Up Catalog Form
     [Arguments]    ${catalogname}
     Click Element    ${PRODCAT.CREATE_CATALOG}
-    Input Text    catalog-name    ${catalogname}
+    Input Text    ${PRODCAT.CATALOG_NAME_INPUT}    ${catalogname}
 
 Save New Catalog
     Click Button    btnSaveProductCatalog

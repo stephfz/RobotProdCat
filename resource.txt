@@ -6,6 +6,13 @@ ${BROWSER}        Chrome
 ${DELAY}          1
 ${LOGIN URL}      http://dtv.plm.com:1234
 #UI Elements
+
+${LOGIN_PAGE.USERNAME_INPUT}    username
+${LOGIN_PAGE.PASSWORD_INPUT}    password
+${LOGIN_PAGE.SUBMIT_BUTTON}    css=input[type='submit']
+
+${INITIAL_PAGE.TITLE}    Create New Catalog | Composer
+
 ${LEFTMENU.SCHEMA}    css=i.icon-sitemap
 ${LEFTMENU.LAUNCH_PRODUCT}    css=i.icon-rocket
 ${LEFTMENU.PRODUCTS}    xpath=//span[contains(text(), 'Products')]
@@ -21,6 +28,7 @@ Open Browser To Login Page
 Login as
     [Arguments]    ${username}    ${password}
     Open Browser To Login Page
-    Input Text    username    ${username}
-    Input Text    password    ${password}
-    Click Element    css=input[type='submit']
+    Input Text    ${LOGIN_PAGE.USERNAME_INPUT}    ${username}
+    Input Text    ${LOGIN_PAGE.PASSWORD_INPUT}    ${password}
+    Click Element    ${LOGIN_PAGE.SUBMIT_BUTTON}
+    Title Should be   ${INITIAL_PAGE.TITLE}

@@ -2,7 +2,7 @@
 Resource          resource.txt
 
 *** Variables ***
-${facet_name}     December 18, 2013
+${facet_name}     MyTestFacet
 
 *** Test Cases ***
 [TestSetup]

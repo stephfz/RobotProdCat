@@ -8,20 +8,24 @@ ${start_date_month}    December 18, 2013
 ${start_date_day}    18
 ${start_date_year}    ${EMPTY}
 ${short_effective_date}    Dec 11, 2013
+${short_day_after_date}    Dec 12, 2013
+
+${catalog_name}   CigniumCatalog
+${product_name}   NewProduct
 
 *** Test Cases ***
 [TestSetup]
     Login as    Dan    Dan
 
 Create New Version
-    Edit Product    CignumCatalog    New Product
+    Edit Product    ${catalog_name}    ${product_name}
     Fill Up New Version Form    ${version_start_date}    ${EMPTY}
     Save Version
     Verify New Version Created    ${short_effective_date}
 
 Archive Version
-    Select Version To Archive    ${short_effective_date}
-    Verify Version has been archived    ${short_effective_date}
+    Select Version To Archive    ${short_day_after_date}
+    Verify Version has been archived    ${short_day_after_date}
 
 Create Final Version
     Fill Up New Version Form    ${version_start_date}    ${version_start_date}

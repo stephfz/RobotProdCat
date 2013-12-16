@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20131211 16:11:40.515" generator="Robot 2.8.1 (Python 2.7.3 on win32)">
-<suite source="C:\Tzt\Robot\ProductCatalogDemo\Catalog\ProductSuite.txt" id="s1" name="ProductSuite">
+<robot generated="20131216 11:39:43.001" generator="Robot 2.8.1 (Python 2.7.3 on win32)">
+<suite source="c:\Tzt\Robot\ProductCatalogDemo\Catalog\ProductSuite.txt" id="s1" name="ProductSuite">
 <test id="s1-t1" name="[TestSetup]">
 <kw type="kw" name="resource.Login as">
 <doc></doc>
@@ -18,31 +18,31 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20131211 16:11:40.607" level="INFO">Opening browser 'Chrome' to base url 'http://dtv.plm.com:1234'</msg>
-<status status="PASS" endtime="20131211 16:11:42.340" starttime="20131211 16:11:40.607"></status>
+<msg timestamp="20131216 11:39:43.094" level="INFO">Opening browser 'Chrome' to base url 'http://dtv.plm.com:1234'</msg>
+<status status="PASS" endtime="20131216 11:39:44.667" starttime="20131216 11:39:43.093"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Maximize Browser Window">
 <doc>Maximizes current browser window.</doc>
 <arguments>
 </arguments>
-<status status="PASS" endtime="20131211 16:11:42.495" starttime="20131211 16:11:42.340"></status>
+<status status="PASS" endtime="20131216 11:39:44.828" starttime="20131216 11:39:44.667"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Set Selenium Speed">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20131211 16:11:42.496" starttime="20131211 16:11:42.495"></status>
+<status status="PASS" endtime="20131216 11:39:44.829" starttime="20131216 11:39:44.829"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Title Should Be">
 <doc>Verifies that current page title equals `title`.</doc>
 <arguments>
 <arg>Composer</arg>
 </arguments>
-<msg timestamp="20131211 16:11:43.503" level="INFO">Page title is 'Composer'.</msg>
-<status status="PASS" endtime="20131211 16:11:43.503" starttime="20131211 16:11:42.496"></status>
+<msg timestamp="20131216 11:39:45.843" level="INFO">Page title is 'Composer'.</msg>
+<status status="PASS" endtime="20131216 11:39:45.843" starttime="20131216 11:39:44.829"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:11:43.504" starttime="20131211 16:11:40.606"></status>
+<status status="PASS" endtime="20131216 11:39:45.843" starttime="20131216 11:39:43.093"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -50,8 +50,8 @@
 <arg>username</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20131211 16:11:43.505" level="INFO">Typing text 'Dan' into text field 'username'</msg>
-<status status="PASS" endtime="20131211 16:11:46.627" starttime="20131211 16:11:43.504"></status>
+<msg timestamp="20131216 11:39:45.844" level="INFO">Typing text 'Dan' into text field 'username'</msg>
+<status status="PASS" endtime="20131216 11:39:48.982" starttime="20131216 11:39:45.843"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -59,23 +59,31 @@
 <arg>password</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20131211 16:11:46.628" level="INFO">Typing text 'Dan' into text field 'password'</msg>
-<status status="PASS" endtime="20131211 16:11:49.774" starttime="20131211 16:11:46.627"></status>
+<msg timestamp="20131216 11:39:48.983" level="INFO">Typing text 'Dan' into text field 'password'</msg>
+<status status="PASS" endtime="20131216 11:39:52.158" starttime="20131216 11:39:48.982"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Click Element">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>css=input[type='submit']</arg>
 </arguments>
-<msg timestamp="20131211 16:11:49.774" level="INFO">Clicking element 'css=input[type='submit']'.</msg>
-<status status="PASS" endtime="20131211 16:11:51.892" starttime="20131211 16:11:49.774"></status>
+<msg timestamp="20131216 11:39:52.158" level="INFO">Clicking element 'css=input[type='submit']'.</msg>
+<status status="PASS" endtime="20131216 11:39:54.250" starttime="20131216 11:39:52.158"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:11:51.892" starttime="20131211 16:11:40.606"></status>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Create New Catalog | Composer</arg>
+</arguments>
+<msg timestamp="20131216 11:39:55.276" level="INFO">Page title is 'Create New Catalog | Composer'.</msg>
+<status status="PASS" endtime="20131216 11:39:55.276" starttime="20131216 11:39:54.251"></status>
+</kw>
+<status status="PASS" endtime="20131216 11:39:55.276" starttime="20131216 11:39:43.092"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20131211 16:11:51.892" critical="yes" starttime="20131211 16:11:40.605"></status>
+<status status="PASS" endtime="20131216 11:39:55.277" critical="yes" starttime="20131216 11:39:43.092"></status>
 </test>
 <test id="s1-t2" name="New Catalog">
 <kw type="kw" name="resource.Fill Up Catalog Form">
@@ -88,8 +96,8 @@
 <arguments>
 <arg>${PRODCAT.CREATE_CATALOG}</arg>
 </arguments>
-<msg timestamp="20131211 16:11:51.894" level="INFO">Clicking element 'css=i.icon-plus-sign'.</msg>
-<status status="PASS" endtime="20131211 16:11:54.002" starttime="20131211 16:11:51.894"></status>
+<msg timestamp="20131216 11:39:55.281" level="INFO">Clicking element 'css=i.icon-plus-sign'.</msg>
+<status status="PASS" endtime="20131216 11:39:57.421" starttime="20131216 11:39:55.280"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -97,10 +105,10 @@
 <arg>catalog-name</arg>
 <arg>${catalogname}</arg>
 </arguments>
-<msg timestamp="20131211 16:11:54.003" level="INFO">Typing text 'CigniumCatalog' into text field 'catalog-name'</msg>
-<status status="PASS" endtime="20131211 16:11:57.225" starttime="20131211 16:11:54.002"></status>
+<msg timestamp="20131216 11:39:57.422" level="INFO">Typing text 'CigniumCatalog' into text field 'catalog-name'</msg>
+<status status="PASS" endtime="20131216 11:40:00.628" starttime="20131216 11:39:57.421"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:11:57.225" starttime="20131211 16:11:51.894"></status>
+<status status="PASS" endtime="20131216 11:40:00.628" starttime="20131216 11:39:55.280"></status>
 </kw>
 <kw type="kw" name="resource.Save New Catalog">
 <doc></doc>
@@ -111,10 +119,10 @@
 <arguments>
 <arg>btnSaveProductCatalog</arg>
 </arguments>
-<msg timestamp="20131211 16:11:57.227" level="INFO">Clicking button 'btnSaveProductCatalog'.</msg>
-<status status="PASS" endtime="20131211 16:12:01.355" starttime="20131211 16:11:57.227"></status>
+<msg timestamp="20131216 11:40:00.630" level="INFO">Clicking button 'btnSaveProductCatalog'.</msg>
+<status status="PASS" endtime="20131216 11:40:04.774" starttime="20131216 11:40:00.630"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:01.355" starttime="20131211 16:11:57.226"></status>
+<status status="PASS" endtime="20131216 11:40:04.774" starttime="20131216 11:40:00.629"></status>
 </kw>
 <kw type="kw" name="resource.Verify Catalog has been created">
 <doc></doc>
@@ -127,15 +135,15 @@
 <arg>css=h2.subheading &gt; span</arg>
 <arg>${catalogname}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:01.356" level="INFO">Verifying element 'css=h2.subheading &gt; span' contains exactly text 'CigniumCatalog'.</msg>
-<status status="PASS" endtime="20131211 16:12:03.408" starttime="20131211 16:12:01.356"></status>
+<msg timestamp="20131216 11:40:04.777" level="INFO">Verifying element 'css=h2.subheading &gt; span' contains exactly text 'CigniumCatalog'.</msg>
+<status status="PASS" endtime="20131216 11:40:06.834" starttime="20131216 11:40:04.776"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:03.408" starttime="20131211 16:12:01.356"></status>
+<status status="PASS" endtime="20131216 11:40:06.834" starttime="20131216 11:40:04.775"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20131211 16:12:03.409" critical="yes" starttime="20131211 16:11:51.893"></status>
+<status status="PASS" endtime="20131216 11:40:06.835" critical="yes" starttime="20131216 11:39:55.278"></status>
 </test>
 <test id="s1-t3" name="Add Category to Catalog">
 <kw type="kw" name="resource.Open Schema">
@@ -147,10 +155,10 @@
 <arguments>
 <arg>${LEFTMENU.SCHEMA}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:03.414" level="INFO">Clicking element 'css=i.icon-sitemap'.</msg>
-<status status="PASS" endtime="20131211 16:12:05.542" starttime="20131211 16:12:03.414"></status>
+<msg timestamp="20131216 11:40:06.839" level="INFO">Clicking element 'css=i.icon-sitemap'.</msg>
+<status status="PASS" endtime="20131216 11:40:08.988" starttime="20131216 11:40:06.839"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:05.542" starttime="20131211 16:12:03.413"></status>
+<status status="PASS" endtime="20131216 11:40:08.988" starttime="20131216 11:40:06.838"></status>
 </kw>
 <kw type="kw" name="resource.Fill Up Category Form">
 <doc></doc>
@@ -162,16 +170,16 @@
 <arguments>
 <arg>xpath=//div[@class='tree-node-main']</arg>
 </arguments>
-<msg timestamp="20131211 16:12:05.544" level="INFO">Clicking element 'xpath=//div[@class='tree-node-main']'.</msg>
-<status status="PASS" endtime="20131211 16:12:07.639" starttime="20131211 16:12:05.544"></status>
+<msg timestamp="20131216 11:40:08.990" level="INFO">Clicking element 'xpath=//div[@class='tree-node-main']'.</msg>
+<status status="PASS" endtime="20131216 11:40:11.094" starttime="20131216 11:40:08.990"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Click Element">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[3]</arg>
 </arguments>
-<msg timestamp="20131211 16:12:07.639" level="INFO">Clicking element 'xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[3]'.</msg>
-<status status="PASS" endtime="20131211 16:12:09.782" starttime="20131211 16:12:07.639"></status>
+<msg timestamp="20131216 11:40:11.094" level="INFO">Clicking element 'xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[3]'.</msg>
+<status status="PASS" endtime="20131216 11:40:13.231" starttime="20131216 11:40:11.094"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -179,10 +187,10 @@
 <arg>category-name</arg>
 <arg>${categoryName}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:09.783" level="INFO">Typing text 'aNewCategory' into text field 'category-name'</msg>
-<status status="PASS" endtime="20131211 16:12:12.997" starttime="20131211 16:12:09.782"></status>
+<msg timestamp="20131216 11:40:13.232" level="INFO">Typing text 'aNewCategory' into text field 'category-name'</msg>
+<status status="PASS" endtime="20131216 11:40:16.389" starttime="20131216 11:40:13.231"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:12.997" starttime="20131211 16:12:05.543"></status>
+<status status="PASS" endtime="20131216 11:40:16.389" starttime="20131216 11:40:08.989"></status>
 </kw>
 <kw type="kw" name="resource.Save New Product Category">
 <doc></doc>
@@ -193,15 +201,15 @@
 <arguments>
 <arg>${PRODCAT.SAVE_CATEGORY}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:12.999" level="INFO">Clicking button 'btnSaveCategory'.</msg>
-<status status="PASS" endtime="20131211 16:12:17.121" starttime="20131211 16:12:12.999"></status>
+<msg timestamp="20131216 11:40:16.392" level="INFO">Clicking button 'btnSaveCategory'.</msg>
+<status status="PASS" endtime="20131216 11:40:20.518" starttime="20131216 11:40:16.391"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:17.121" starttime="20131211 16:12:12.998"></status>
+<status status="PASS" endtime="20131216 11:40:20.519" starttime="20131216 11:40:16.390"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20131211 16:12:17.123" critical="yes" starttime="20131211 16:12:03.411"></status>
+<status status="PASS" endtime="20131216 11:40:20.522" critical="yes" starttime="20131216 11:40:06.837"></status>
 </test>
 <test id="s1-t4" name="Launch Product">
 <kw type="kw" name="resource.Open Launch Product">
@@ -213,10 +221,10 @@
 <arguments>
 <arg>${LEFTMENU.LAUNCH_PRODUCT}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:17.127" level="INFO">Clicking element 'css=i.icon-rocket'.</msg>
-<status status="PASS" endtime="20131211 16:12:19.227" starttime="20131211 16:12:17.127"></status>
+<msg timestamp="20131216 11:40:20.526" level="INFO">Clicking element 'css=i.icon-rocket'.</msg>
+<status status="PASS" endtime="20131216 11:40:22.645" starttime="20131216 11:40:20.526"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:19.227" starttime="20131211 16:12:17.126"></status>
+<status status="PASS" endtime="20131216 11:40:22.645" starttime="20131216 11:40:20.525"></status>
 </kw>
 <kw type="kw" name="resource.Fill Up Product Form">
 <doc></doc>
@@ -230,8 +238,8 @@
 <arg>product-name</arg>
 <arg>${productName}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:19.230" level="INFO">Typing text 'New Product' into text field 'product-name'</msg>
-<status status="PASS" endtime="20131211 16:12:22.397" starttime="20131211 16:12:19.229"></status>
+<msg timestamp="20131216 11:40:22.648" level="INFO">Typing text 'New Product' into text field 'product-name'</msg>
+<status status="PASS" endtime="20131216 11:40:25.800" starttime="20131216 11:40:22.647"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Select From List">
 <doc>Selects `*items` from list identified by `locator`</doc>
@@ -239,18 +247,18 @@
 <arg>product-template-category</arg>
 <arg>Root » ${categoryName}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:22.398" level="INFO">Selecting option(s) 'Root » aNewCategory' from list 'product-template-category'.</msg>
-<status status="PASS" endtime="20131211 16:12:29.575" starttime="20131211 16:12:22.397"></status>
+<msg timestamp="20131216 11:40:25.801" level="INFO">Selecting option(s) 'Root » aNewCategory' from list 'product-template-category'.</msg>
+<status status="PASS" endtime="20131216 11:40:33.023" starttime="20131216 11:40:25.800"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Click Element">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${PRODCAT.CREATE_PRODUCT}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:29.576" level="INFO">Clicking element 'css=i.icon-save'.</msg>
-<status status="PASS" endtime="20131211 16:12:31.669" starttime="20131211 16:12:29.575"></status>
+<msg timestamp="20131216 11:40:33.024" level="INFO">Clicking element 'css=i.icon-save'.</msg>
+<status status="PASS" endtime="20131216 11:40:35.141" starttime="20131216 11:40:33.023"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:31.670" starttime="20131211 16:12:19.228"></status>
+<status status="PASS" endtime="20131216 11:40:35.141" starttime="20131216 11:40:22.646"></status>
 </kw>
 <kw type="kw" name="resource.Save Draft Product Version">
 <doc></doc>
@@ -261,10 +269,10 @@
 <arguments>
 <arg>${PRODCAT.SAVE_VERSION}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:31.671" level="INFO">Clicking element 'xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]'.</msg>
-<status status="PASS" endtime="20131211 16:12:33.787" starttime="20131211 16:12:31.671"></status>
+<msg timestamp="20131216 11:40:35.143" level="INFO">Clicking element 'xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]'.</msg>
+<status status="PASS" endtime="20131216 11:40:37.340" starttime="20131216 11:40:35.143"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:33.788" starttime="20131211 16:12:31.671"></status>
+<status status="PASS" endtime="20131216 11:40:37.340" starttime="20131216 11:40:35.142"></status>
 </kw>
 <kw type="kw" name="resource.Verify Product is Listed on Live Products List">
 <doc></doc>
@@ -276,8 +284,8 @@
 <arguments>
 <arg>xpath=//a[@class='back-button']</arg>
 </arguments>
-<msg timestamp="20131211 16:12:33.790" level="INFO">Clicking element 'xpath=//a[@class='back-button']'.</msg>
-<status status="PASS" endtime="20131211 16:12:35.987" starttime="20131211 16:12:33.790"></status>
+<msg timestamp="20131216 11:40:37.341" level="INFO">Clicking element 'xpath=//a[@class='back-button']'.</msg>
+<status status="PASS" endtime="20131216 11:40:39.591" starttime="20131216 11:40:37.341"></status>
 </kw>
 <kw type="kw" name="resource.Open Products List">
 <doc></doc>
@@ -288,41 +296,41 @@
 <arguments>
 <arg>${LEFTMENU.PRODUCTS}</arg>
 </arguments>
-<msg timestamp="20131211 16:12:35.988" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Products')]'.</msg>
-<status status="PASS" endtime="20131211 16:12:38.088" starttime="20131211 16:12:35.988"></status>
+<msg timestamp="20131216 11:40:39.593" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Products')]'.</msg>
+<status status="PASS" endtime="20131216 11:40:41.685" starttime="20131216 11:40:39.592"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:38.089" starttime="20131211 16:12:35.987"></status>
+<status status="PASS" endtime="20131216 11:40:41.686" starttime="20131216 11:40:39.591"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>xpath=//span[contains(text(), '${productName}')]</arg>
 </arguments>
-<status status="PASS" endtime="20131211 16:12:39.125" starttime="20131211 16:12:38.089"></status>
+<status status="PASS" endtime="20131216 11:40:43.937" starttime="20131216 11:40:41.686"></status>
 </kw>
-<status status="PASS" endtime="20131211 16:12:39.125" starttime="20131211 16:12:33.789"></status>
+<status status="PASS" endtime="20131216 11:40:43.937" starttime="20131216 11:40:37.340"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20131211 16:12:39.126" critical="yes" starttime="20131211 16:12:17.124"></status>
+<status status="PASS" endtime="20131216 11:40:43.938" critical="yes" starttime="20131216 11:40:20.524"></status>
 </test>
 <test id="s1-t5" name="[Teardown]">
 <kw type="kw" name="Selenium2Library.Close Browser">
 <doc>Closes the current browser.</doc>
 <arguments>
 </arguments>
-<status status="PASS" endtime="20131211 16:12:41.261" starttime="20131211 16:12:39.129"></status>
+<status status="PASS" endtime="20131216 11:40:46.101" starttime="20131216 11:40:43.941"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20131211 16:12:41.262" critical="yes" starttime="20131211 16:12:39.128"></status>
+<status status="PASS" endtime="20131216 11:40:46.102" critical="yes" starttime="20131216 11:40:43.940"></status>
 </test>
 <doc></doc>
 <metadata>
 </metadata>
-<status status="PASS" endtime="20131211 16:12:41.264" starttime="20131211 16:11:40.515"></status>
+<status status="PASS" endtime="20131216 11:40:46.104" starttime="20131216 11:39:43.001"></status>
 </suite>
 <statistics>
 <total>
