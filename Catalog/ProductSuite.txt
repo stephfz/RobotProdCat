@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          resource.txt
+Resource          prodcat_resource.txt
 
 
 *** Variables ***
@@ -30,3 +30,5 @@ Launch Product
 
 [Teardown]
     Close Browser
+
+

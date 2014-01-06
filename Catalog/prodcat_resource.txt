@@ -1,0 +1,75 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../resource.txt
+
+*** Variables ***
+#UI Elements
+${PRODCAT.CREATE_CATALOG}    css=i.icon-plus-sign
+${PRODCAT.CATALOG_NAME_INPUT}    catalog-name
+${PRODCAT.CATALOG_DESCRIPTION_INPUT}    catalog-description
+${PRODCAT.SAVE_BUTTON}    btnSaveProductCatalog
+
+
+
+${PRODCAT.SAVE_CATEGORY}    btnSaveCategory
+${PRODCAT.CREATE_PRODUCT}    css=i.icon-save
+
+${PRODCAT.PRODUCT_NAME_INPUT}   product-name
+${PRODCAT.CATALOG_CATEGORIES_LIST}    product-template-category
+
+
+
+
+${TEMPVER.SAVE_VERSION}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]
+${TEMPVER.BACK_BUTTON}    xpath=//a[@class='back-button']
+
+
+*** Keywords ***
+Open Product Composer
+    Click Link    Product Composer
+
+Fill Up Catalog Form
+    [Arguments]    ${catalogname}
+    Click Element    ${PRODCAT.CREATE_CATALOG}
+    Input Text    ${PRODCAT.CATALOG_NAME_INPUT}    ${catalogname}
+
+Save New Catalog
+    Click Button    ${PRODCAT.SAVE_BUTTON}
+
+Verify Catalog has been created
+    [Arguments]    ${catalogname}
+    Element Text Should Be    css=h2.subheading > span    ${catalogname}
+
+Fill Up Category Form
+    [Arguments]    ${categoryName}
+    Click Element    xpath=//div[@class='tree-node-main']
+    Click Element    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
+    Input Text    category-name    ${categoryName}
+
+Save New Product Category
+    Click Button    ${PRODCAT.SAVE_CATEGORY}
+
+Open Schema
+    Click Element    ${LEFTMENU.SCHEMA}
+
+Open Launch Product
+    Click Element    ${LEFTMENU.LAUNCH_PRODUCT}
+
+Open Products List
+    Click Element    ${LEFTMENU.PRODUCTS}
+
+Fill Up Product Form
+    [Arguments]    ${productName}    ${categoryName}
+    Input Text    ${PRODCAT.PRODUCT_NAME_INPUT}    ${productName}
+    Select From List    ${PRODCAT.CATALOG_CATEGORIES_LIST}    Root » ${categoryName}
+    Click Element    ${PRODCAT.CREATE_PRODUCT}
+
+Save Draft Product Version
+    Click Element    ${TEMPVER.SAVE_VERSION}
+
+Verify Product is Listed on Live Products List
+    [Arguments]    ${productName}
+    Wait Until Page Contains Element    ${TEMPVER.BACK_BUTTON}
+    Click Element    ${TEMPVER.BACK_BUTTON}
+    Open Products List
+    Wait Until Page Contains Element    xpath=//span[contains(text(), '${productName}')]

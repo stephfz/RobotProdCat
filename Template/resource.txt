@@ -17,7 +17,7 @@ ${FACET.PROPERTY_UNIQUE}    xpath=//span[contains(text(), 'Unique')]
 
 *** Keywords ***
 Open Facets
-    Click Link    Product Composer
+    
     Click Element    ${LEFTMENU.FACETS}
 
 Fill Up Facet Form
