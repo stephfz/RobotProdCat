@@ -1,8 +1,8 @@
 *** Settings ***
 Resource          resource.txt
+Resource          ../datainput.txt
 
-*** Variables ***
-${facet_name}     MyTestFacet
+
 
 *** Test Cases ***
 [TestSetup]

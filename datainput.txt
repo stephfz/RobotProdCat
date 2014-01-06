@@ -1,0 +1,22 @@
+#Catalog Suite
+*** Variables ***
+${catalog_name}   CigniumCatalog
+${category_name}   aNewCategory
+${product_name}   NewProduct
+
+
+#Temporal Versioning
+*** Variables ***
+${version_start_date}    January 6, 2014
+${version_end_date}    January 31, 2014
+${start_date_month}    January 18, 2014
+${start_date_day}    18
+${start_date_year}    ${EMPTY}
+${short_effective_date}    Jan 6, 2014
+${short_day_after_date}    Jan 7, 2014
+
+
+
+#Templates
+*** Variables ***
+${facet_name}   FacetAllRequired

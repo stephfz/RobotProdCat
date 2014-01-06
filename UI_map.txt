@@ -1,0 +1,32 @@
+*** Settings ***
+
+
+
+*** Variables ***
+#UI Elements
+${PRODCAT.CREATE_CATALOG}    css=i.icon-plus-sign
+${PRODCAT.CATALOG_NAME_INPUT}    catalog-name
+${PRODCAT.CATALOG_DESCRIPTION_INPUT}    catalog-description
+${PRODCAT.SAVE_BUTTON}    btnSaveProductCatalog
+
+
+
+${PRODCAT.SAVE_CATEGORY}    btnSaveCategory
+${PRODCAT.CREATE_PRODUCT}    css=i.icon-save
+
+${PRODCAT.PRODUCT_NAME_INPUT}   product-name
+${PRODCAT.CATALOG_CATEGORIES_LIST}    product-template-category
+
+
+
+
+${TEMPVER.SAVE_VERSION}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]
+${TEMPVER.BACK_BUTTON}    xpath=//a[@class='back-button']
+
+${TEMPVER.NEW_VERSION}    css=i.icon-plus-sign
+${TEMPVER.VERSION_EFFECTIVE_FROM}    effective_start
+${TEMPVER.VERSION_EFFECTIVE_UNTIL}    effective_until
+${TEMPVER.VERSION_SAVE}    xpath=id('modal-wrapper')/div/form/fieldset[2]/nav/button[1]
+${PRODCAT.CREATE_NEW_VERSION}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[4]
+${PRODLIST.EDIT_BUTTON}    //div[@id='applicationHost']/div/div/section/div/h1/nav/button[1]
+${TEMPVER.ALERT_SECTION}    css=div.action-alert.error

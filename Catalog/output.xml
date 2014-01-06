@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20140106 10:18:41.438" generator="Robot 2.8.1 (Python 2.7.3 on win32)">
-<suite source="C:\Tzt\Robot\ProductCatalogDemo\Catalog\ProductSuite.txt" id="s1" name="ProductSuite">
+<robot generated="20140106 15:56:12.977" generator="Robot 2.8.1 (Python 2.7.3 on win32)">
+<suite source="C:\Tzt\Robot\ProductCatalogDemo\Catalog\TemporalVersioning.txt" id="s1" name="TemporalVersioning">
 <test id="s1-t1" name="[TestSetup]">
 <kw type="kw" name="resource.Login as">
 <doc></doc>
@@ -18,31 +18,31 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20140106 10:18:41.528" level="INFO">Opening browser 'Chrome' to base url 'http://dtv.plm.com:1234'</msg>
-<status status="PASS" endtime="20140106 10:18:43.252" starttime="20140106 10:18:41.527"></status>
+<msg timestamp="20140106 15:56:13.086" level="INFO">Opening browser 'Chrome' to base url 'http://dtv.plm.com:1234'</msg>
+<status status="PASS" endtime="20140106 15:56:14.790" starttime="20140106 15:56:13.086"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Maximize Browser Window">
 <doc>Maximizes current browser window.</doc>
 <arguments>
 </arguments>
-<status status="PASS" endtime="20140106 10:18:43.404" starttime="20140106 10:18:43.252"></status>
+<status status="PASS" endtime="20140106 15:56:14.947" starttime="20140106 15:56:14.791"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Set Selenium Speed">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20140106 10:18:43.404" starttime="20140106 10:18:43.404"></status>
+<status status="PASS" endtime="20140106 15:56:14.947" starttime="20140106 15:56:14.947"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Title Should Be">
 <doc>Verifies that current page title equals `title`.</doc>
 <arguments>
 <arg>Composer</arg>
 </arguments>
-<msg timestamp="20140106 10:18:44.410" level="INFO">Page title is 'Composer'.</msg>
-<status status="PASS" endtime="20140106 10:18:44.411" starttime="20140106 10:18:43.405"></status>
+<msg timestamp="20140106 15:56:15.971" level="INFO">Page title is 'Composer'.</msg>
+<status status="PASS" endtime="20140106 15:56:15.971" starttime="20140106 15:56:14.947"></status>
 </kw>
-<status status="PASS" endtime="20140106 10:18:44.412" starttime="20140106 10:18:41.527"></status>
+<status status="PASS" endtime="20140106 15:56:15.971" starttime="20140106 15:56:13.085"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -50,8 +50,8 @@
 <arg>${LOGIN_PAGE.USERNAME_INPUT}</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20140106 10:18:44.414" level="INFO">Typing text 'Dan' into text field 'username'</msg>
-<status status="PASS" endtime="20140106 10:18:47.563" starttime="20140106 10:18:44.413"></status>
+<msg timestamp="20140106 15:56:15.971" level="INFO">Typing text 'Dan' into text field 'username'</msg>
+<status status="PASS" endtime="20140106 15:56:19.110" starttime="20140106 15:56:15.971"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -59,241 +59,46 @@
 <arg>${LOGIN_PAGE.PASSWORD_INPUT}</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20140106 10:18:47.564" level="INFO">Typing text 'Dan' into text field 'password'</msg>
-<status status="PASS" endtime="20140106 10:18:50.718" starttime="20140106 10:18:47.563"></status>
+<msg timestamp="20140106 15:56:19.111" level="INFO">Typing text 'Dan' into text field 'password'</msg>
+<status status="PASS" endtime="20140106 15:56:22.261" starttime="20140106 15:56:19.110"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Click Element">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${LOGIN_PAGE.SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20140106 10:18:50.719" level="INFO">Clicking element 'css=input[type='submit']'.</msg>
-<status status="PASS" endtime="20140106 10:18:52.809" starttime="20140106 10:18:50.718"></status>
+<msg timestamp="20140106 15:56:22.262" level="INFO">Clicking element 'css=input[type='submit']'.</msg>
+<status status="PASS" endtime="20140106 15:56:24.363" starttime="20140106 15:56:22.261"></status>
 </kw>
 <kw type="kw" name="Selenium2Library.Title Should Be">
 <doc>Verifies that current page title equals `title`.</doc>
 <arguments>
 <arg>${INITIAL_PAGE.TITLE}</arg>
 </arguments>
-<msg timestamp="20140106 10:18:53.821" level="INFO">Page title is 'Create New Catalog | Composer'.</msg>
-<status status="PASS" endtime="20140106 10:18:53.821" starttime="20140106 10:18:52.810"></status>
+<kw type="kw" name="Selenium2Library.Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140106 15:56:26.722" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20140106 15:56:26.722" starttime="20140106 15:56:25.494"></status>
 </kw>
-<status status="PASS" endtime="20140106 10:18:53.821" starttime="20140106 10:18:41.526"></status>
+<msg timestamp="20140106 15:56:26.723" level="FAIL">Title should have been 'Create New Catalog | Composer' but was 'CigniumCatalog | Composer'</msg>
+<status status="FAIL" endtime="20140106 15:56:26.723" starttime="20140106 15:56:24.363"></status>
+</kw>
+<status status="FAIL" endtime="20140106 15:56:26.724" starttime="20140106 15:56:13.085"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20140106 10:18:53.822" critical="yes" starttime="20140106 10:18:41.526"></status>
+<status status="FAIL" endtime="20140106 15:56:26.725" critical="yes" starttime="20140106 15:56:13.084">Title should have been 'Create New Catalog | Composer' but was 'CigniumCatalog | Composer'</status>
 </test>
-<test id="s1-t2" name="New Catalog">
-<kw type="kw" name="prodcat_resource.Fill Up Catalog Form">
+<test id="s1-t2" name="Create New Version">
+<kw type="kw" name="tempver_resource.Edit Product">
 <doc></doc>
 <arguments>
 <arg>${catalog_name}</arg>
-</arguments>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${PRODCAT.CREATE_CATALOG}</arg>
-</arguments>
-<msg timestamp="20140106 10:18:53.828" level="INFO">Clicking element 'css=i.icon-plus-sign'.</msg>
-<status status="PASS" endtime="20140106 10:18:55.953" starttime="20140106 10:18:53.828"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>${PRODCAT.CATALOG_NAME_INPUT}</arg>
-<arg>${catalogname}</arg>
-</arguments>
-<msg timestamp="20140106 10:18:55.954" level="INFO">Typing text 'CigniumCatalog' into text field 'catalog-name'</msg>
-<status status="PASS" endtime="20140106 10:18:59.189" starttime="20140106 10:18:55.953"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:18:59.189" starttime="20140106 10:18:53.826"></status>
-</kw>
-<kw type="kw" name="prodcat_resource.Save New Catalog">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Selenium2Library.Click Button">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>${PRODCAT.SAVE_BUTTON}</arg>
-</arguments>
-<msg timestamp="20140106 10:18:59.192" level="INFO">Clicking button 'btnSaveProductCatalog'.</msg>
-<status status="PASS" endtime="20140106 10:19:03.295" starttime="20140106 10:18:59.191"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:03.295" starttime="20140106 10:18:59.190"></status>
-</kw>
-<kw type="kw" name="prodcat_resource.Verify Catalog has been created">
-<doc></doc>
-<arguments>
-<arg>${catalog_name}</arg>
-</arguments>
-<kw type="kw" name="Selenium2Library.Element Text Should Be">
-<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
-<arguments>
-<arg>css=h2.subheading &gt; span</arg>
-<arg>${catalogname}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:03.298" level="INFO">Verifying element 'css=h2.subheading &gt; span' contains exactly text 'CigniumCatalog'.</msg>
-<status status="PASS" endtime="20140106 10:19:05.353" starttime="20140106 10:19:03.298"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:05.353" starttime="20140106 10:19:03.297"></status>
-</kw>
-<doc></doc>
-<tags>
-</tags>
-<status status="PASS" endtime="20140106 10:19:05.354" critical="yes" starttime="20140106 10:18:53.825"></status>
-</test>
-<test id="s1-t3" name="Add Category to Catalog">
-<kw type="kw" name="prodcat_resource.Open Schema">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${LEFTMENU.SCHEMA}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:05.359" level="INFO">Clicking element 'css=i.icon-sitemap'.</msg>
-<status status="PASS" endtime="20140106 10:19:07.463" starttime="20140106 10:19:05.359"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:07.464" starttime="20140106 10:19:05.358"></status>
-</kw>
-<kw type="kw" name="prodcat_resource.Fill Up Category Form">
-<doc></doc>
-<arguments>
-<arg>${category_name}</arg>
-</arguments>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//div[@class='tree-node-main']</arg>
-</arguments>
-<msg timestamp="20140106 10:19:07.467" level="INFO">Clicking element 'xpath=//div[@class='tree-node-main']'.</msg>
-<status status="PASS" endtime="20140106 10:19:09.559" starttime="20140106 10:19:07.467"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]</arg>
-</arguments>
-<msg timestamp="20140106 10:19:09.559" level="INFO">Clicking element 'xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]'.</msg>
-<status status="PASS" endtime="20140106 10:19:11.666" starttime="20140106 10:19:09.559"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>category-name</arg>
-<arg>${categoryName}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:11.667" level="INFO">Typing text 'aNewCategory' into text field 'category-name'</msg>
-<status status="PASS" endtime="20140106 10:19:14.829" starttime="20140106 10:19:11.666"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:14.829" starttime="20140106 10:19:07.465"></status>
-</kw>
-<kw type="kw" name="prodcat_resource.Save New Product Category">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Selenium2Library.Click Button">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>${PRODCAT.SAVE_CATEGORY}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:14.832" level="INFO">Clicking button 'btnSaveCategory'.</msg>
-<status status="PASS" endtime="20140106 10:19:18.960" starttime="20140106 10:19:14.831"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:18.961" starttime="20140106 10:19:14.830"></status>
-</kw>
-<doc></doc>
-<tags>
-</tags>
-<status status="PASS" endtime="20140106 10:19:18.962" critical="yes" starttime="20140106 10:19:05.356"></status>
-</test>
-<test id="s1-t4" name="Launch Product">
-<kw type="kw" name="prodcat_resource.Open Launch Product">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${LEFTMENU.LAUNCH_PRODUCT}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:18.967" level="INFO">Clicking element 'css=i.icon-rocket'.</msg>
-<status status="PASS" endtime="20140106 10:19:21.093" starttime="20140106 10:19:18.966"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:21.093" starttime="20140106 10:19:18.965"></status>
-</kw>
-<kw type="kw" name="prodcat_resource.Fill Up Product Form">
-<doc></doc>
-<arguments>
-<arg>${product_name}</arg>
-<arg>${category_name}</arg>
-</arguments>
-<kw type="kw" name="Selenium2Library.Input Text">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>${PRODCAT.PRODUCT_NAME_INPUT}</arg>
-<arg>${productName}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:21.096" level="INFO">Typing text 'NewProduct' into text field 'product-name'</msg>
-<status status="PASS" endtime="20140106 10:19:24.217" starttime="20140106 10:19:21.095"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Select From List">
-<doc>Selects `*items` from list identified by `locator`</doc>
-<arguments>
-<arg>${PRODCAT.CATALOG_CATEGORIES_LIST}</arg>
-<arg>Root » ${categoryName}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:24.218" level="INFO">Selecting option(s) 'Root » aNewCategory' from list 'product-template-category'.</msg>
-<status status="PASS" endtime="20140106 10:19:31.350" starttime="20140106 10:19:24.217"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${PRODCAT.CREATE_PRODUCT}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:31.351" level="INFO">Clicking element 'css=i.icon-save'.</msg>
-<status status="PASS" endtime="20140106 10:19:33.464" starttime="20140106 10:19:31.350"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:33.464" starttime="20140106 10:19:21.094"></status>
-</kw>
-<kw type="kw" name="prodcat_resource.Save Draft Product Version">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${TEMPVER.SAVE_VERSION}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:33.467" level="INFO">Clicking element 'xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]'.</msg>
-<status status="PASS" endtime="20140106 10:19:35.628" starttime="20140106 10:19:33.467"></status>
-</kw>
-<status status="PASS" endtime="20140106 10:19:35.629" starttime="20140106 10:19:33.466"></status>
-</kw>
-<kw type="kw" name="prodcat_resource.Verify Product is Listed on Live Products List">
-<doc></doc>
-<arguments>
 <arg>${product_name}</arg>
 </arguments>
-<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<arguments>
-<arg>${TEMPVER.BACK_BUTTON}</arg>
-</arguments>
-<status status="PASS" endtime="20140106 10:19:37.874" starttime="20140106 10:19:35.631"></status>
-</kw>
-<kw type="kw" name="Selenium2Library.Click Element">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${TEMPVER.BACK_BUTTON}</arg>
-</arguments>
-<msg timestamp="20140106 10:19:37.875" level="INFO">Clicking element 'xpath=//a[@class='back-button']'.</msg>
-<status status="PASS" endtime="20140106 10:19:40.002" starttime="20140106 10:19:37.874"></status>
-</kw>
 <kw type="kw" name="prodcat_resource.Open Products List">
 <doc></doc>
 <arguments>
@@ -303,51 +108,190 @@
 <arguments>
 <arg>${LEFTMENU.PRODUCTS}</arg>
 </arguments>
-<msg timestamp="20140106 10:19:40.004" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Products')]'.</msg>
-<status status="PASS" endtime="20140106 10:19:42.099" starttime="20140106 10:19:40.003"></status>
+<msg timestamp="20140106 15:56:26.732" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Products')]'.</msg>
+<status status="PASS" endtime="20140106 15:56:28.835" starttime="20140106 15:56:26.732"></status>
 </kw>
-<status status="PASS" endtime="20140106 10:19:42.100" starttime="20140106 10:19:40.002"></status>
+<status status="PASS" endtime="20140106 15:56:28.836" starttime="20140106 15:56:26.731"></status>
 </kw>
-<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
-<doc>Waits until element specified with `locator` appears on current page.</doc>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//span[contains(text(), '${productName}')]</arg>
 </arguments>
-<status status="PASS" endtime="20140106 10:19:43.125" starttime="20140106 10:19:42.101"></status>
+<msg timestamp="20140106 15:56:28.837" level="INFO">Clicking element 'xpath=//span[contains(text(), 'NewProduct')]'.</msg>
+<status status="PASS" endtime="20140106 15:56:30.937" starttime="20140106 15:56:28.836"></status>
 </kw>
-<status status="PASS" endtime="20140106 10:19:43.125" starttime="20140106 10:19:35.630"></status>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${PRODLIST.EDIT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20140106 15:56:30.937" level="INFO">Clicking button '//div[@id='applicationHost']/div/div/section/div/h1/nav/button[1]'.</msg>
+<status status="PASS" endtime="20140106 15:56:36.060" starttime="20140106 15:56:30.937"></status>
+</kw>
+<status status="PASS" endtime="20140106 15:56:36.062" starttime="20140106 15:56:26.729"></status>
+</kw>
+<kw type="kw" name="tempver_resource.Fill Up New Version Form">
+<doc></doc>
+<arguments>
+<arg>${version_start_date}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${PRODCAT.CREATE_NEW_VERSION}</arg>
+</arguments>
+<msg timestamp="20140106 15:56:36.067" level="INFO">Clicking element 'xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[4]'.</msg>
+<status status="PASS" endtime="20140106 15:56:38.200" starttime="20140106 15:56:36.066"></status>
+</kw>
+<status status="PASS" endtime="20140106 15:56:38.200" starttime="20140106 15:56:36.064"></status>
+</kw>
+<kw type="kw" name="tempver_resource.Save Version">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${TEMPVER.VERSION_SAVE}</arg>
+</arguments>
+<msg timestamp="20140106 15:56:38.203" level="INFO">Clicking button 'xpath=id('modal-wrapper')/div/form/fieldset[2]/nav/button[1]'.</msg>
+<status status="PASS" endtime="20140106 15:56:43.334" starttime="20140106 15:56:38.202"></status>
+</kw>
+<status status="PASS" endtime="20140106 15:56:43.334" starttime="20140106 15:56:38.201"></status>
+</kw>
+<kw type="kw" name="tempver_resource.Verify New Version Created">
+<doc></doc>
+<arguments>
+<arg>${short_effective_date}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Wait Until Element Is Visible">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(), '${effectivefromdateshort}')]</arg>
+</arguments>
+<status status="PASS" endtime="20140106 15:56:45.382" starttime="20140106 15:56:43.335"></status>
+</kw>
+<status status="PASS" endtime="20140106 15:56:45.382" starttime="20140106 15:56:43.335"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20140106 10:19:43.126" critical="yes" starttime="20140106 10:19:18.964"></status>
+<status status="PASS" endtime="20140106 15:56:45.383" critical="yes" starttime="20140106 15:56:26.727"></status>
+</test>
+<test id="s1-t3" name="Archive Version">
+<kw type="kw" name="tempver_resource.Select Version To Archive">
+<doc></doc>
+<arguments>
+<arg>${short_day_after_date}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(), '${short_effective_date}')]</arg>
+</arguments>
+<msg timestamp="20140106 15:56:45.388" level="INFO">Clicking element 'xpath=//span[contains(text(), 'Jan 7, 2014')]'.</msg>
+<status status="PASS" endtime="20140106 15:56:47.488" starttime="20140106 15:56:45.388"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>css=i.icon-remove-sign</arg>
+</arguments>
+<msg timestamp="20140106 15:56:47.488" level="INFO">Clicking button 'css=i.icon-remove-sign'.</msg>
+<kw type="kw" name="Selenium2Library.Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20140106 15:56:54.708" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20140106 15:56:54.709" starttime="20140106 15:56:53.549"></status>
+</kw>
+<msg timestamp="20140106 15:56:54.730" level="FAIL">ValueError: Element locator 'css=i.icon-remove-sign' did not match any elements.</msg>
+<status status="FAIL" endtime="20140106 15:56:54.730" starttime="20140106 15:56:47.488"></status>
+</kw>
+<status status="FAIL" endtime="20140106 15:56:54.731" starttime="20140106 15:56:45.386"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140106 15:56:54.731" critical="yes" starttime="20140106 15:56:45.384">ValueError: Element locator 'css=i.icon-remove-sign' did not match any elements.</status>
+</test>
+<test id="s1-t4" name="Create Final Version">
+<kw type="kw" name="tempver_resource.Fill Up New Version Form">
+<doc></doc>
+<arguments>
+<arg>${version_start_date}</arg>
+<arg>${version_start_date}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${PRODCAT.CREATE_NEW_VERSION}</arg>
+</arguments>
+<msg timestamp="20140106 15:56:54.738" level="INFO">Clicking element 'xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[4]'.</msg>
+<status status="PASS" endtime="20140106 15:56:56.853" starttime="20140106 15:56:54.737"></status>
+</kw>
+<status status="PASS" endtime="20140106 15:56:56.853" starttime="20140106 15:56:54.736"></status>
+</kw>
+<kw type="kw" name="tempver_resource.Save Version">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${TEMPVER.VERSION_SAVE}</arg>
+</arguments>
+<msg timestamp="20140106 15:56:56.855" level="INFO">Clicking button 'xpath=id('modal-wrapper')/div/form/fieldset[2]/nav/button[1]'.</msg>
+<status status="PASS" endtime="20140106 15:57:01.975" starttime="20140106 15:56:56.855"></status>
+</kw>
+<status status="PASS" endtime="20140106 15:57:01.976" starttime="20140106 15:56:56.854"></status>
+</kw>
+<kw type="kw" name="tempver_resource.Verify New Version cannot be created">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="tempver_resource.Fill Up New Version Form">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20140106 15:57:01.978" level="FAIL">Keyword 'tempver_resource.Fill Up New Version Form' expected 2 arguments, got 0.</msg>
+<status status="FAIL" endtime="20140106 15:57:01.978" starttime="20140106 15:57:01.978"></status>
+</kw>
+<status status="FAIL" endtime="20140106 15:57:01.979" starttime="20140106 15:57:01.977"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="FAIL" endtime="20140106 15:57:01.979" critical="yes" starttime="20140106 15:56:54.734">Keyword 'tempver_resource.Fill Up New Version Form' expected 2 arguments, got 0.</status>
 </test>
 <test id="s1-t5" name="[Teardown]">
 <kw type="kw" name="Selenium2Library.Close Browser">
 <doc>Closes the current browser.</doc>
 <arguments>
 </arguments>
-<status status="PASS" endtime="20140106 10:19:45.258" starttime="20140106 10:19:43.130"></status>
+<status status="PASS" endtime="20140106 15:57:04.103" starttime="20140106 15:57:01.982"></status>
 </kw>
 <doc></doc>
 <tags>
 </tags>
-<status status="PASS" endtime="20140106 10:19:45.259" critical="yes" starttime="20140106 10:19:43.129"></status>
+<status status="PASS" endtime="20140106 15:57:04.103" critical="yes" starttime="20140106 15:57:01.981"></status>
 </test>
 <doc></doc>
 <metadata>
 </metadata>
-<status status="PASS" endtime="20140106 10:19:45.262" starttime="20140106 10:18:41.438"></status>
+<status status="FAIL" endtime="20140106 15:57:04.106" starttime="20140106 15:56:12.977"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="5">Critical Tests</stat>
-<stat fail="0" pass="5">All Tests</stat>
+<stat fail="3" pass="2">Critical Tests</stat>
+<stat fail="3" pass="2">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" pass="5" id="s1" name="ProductSuite">ProductSuite</stat>
+<stat fail="3" pass="2" id="s1" name="TemporalVersioning">TemporalVersioning</stat>
 </suite>
 </statistics>
 <errors>

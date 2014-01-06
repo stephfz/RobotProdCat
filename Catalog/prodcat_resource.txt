@@ -1,27 +1,9 @@
 *** Settings ***
 Library           Selenium2Library
 Resource          ../resource.txt
-
-*** Variables ***
-#UI Elements
-${PRODCAT.CREATE_CATALOG}    css=i.icon-plus-sign
-${PRODCAT.CATALOG_NAME_INPUT}    catalog-name
-${PRODCAT.CATALOG_DESCRIPTION_INPUT}    catalog-description
-${PRODCAT.SAVE_BUTTON}    btnSaveProductCatalog
+Resource          ../UI_map.txt
 
 
-
-${PRODCAT.SAVE_CATEGORY}    btnSaveCategory
-${PRODCAT.CREATE_PRODUCT}    css=i.icon-save
-
-${PRODCAT.PRODUCT_NAME_INPUT}   product-name
-${PRODCAT.CATALOG_CATEGORIES_LIST}    product-template-category
-
-
-
-
-${TEMPVER.SAVE_VERSION}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]
-${TEMPVER.BACK_BUTTON}    xpath=//a[@class='back-button']
 
 
 *** Keywords ***

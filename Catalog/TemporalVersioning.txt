@@ -1,17 +1,9 @@
 *** Settings ***
 Resource          tempver_resource.txt
+Resource          ../datainput.txt
 
-*** Variables ***
-${version_start_date}    December 18, 2013
-${version_end_date}    December 31, 2013
-${start_date_month}    December 18, 2013
-${start_date_day}    18
-${start_date_year}    ${EMPTY}
-${short_effective_date}    Dec 11, 2013
-${short_day_after_date}    Dec 12, 2013
 
-${catalog_name}   CigniumCatalog
-${product_name}   NewProduct
+
 
 *** Test Cases ***
 [TestSetup]

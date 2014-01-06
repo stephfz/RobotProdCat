@@ -1,0 +1,11 @@
+*** Settings ***
+Library           Selenium2Library
+
+
+*** Variables ***
+#UI Elements
+
+
+*** Keywords ***
+Open Roles Page
+    Click Link    Roles 

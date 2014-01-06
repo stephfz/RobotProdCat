@@ -1,0 +1,12 @@
+*** Settings ***
+Resource          usermanagement_resource.txt
+Resource          ../datainput.txt
+
+
+*** Test Cases ***
+[TestSetup]
+    Login as    Kip    Kip
+
+
+Set All Permission
+ Open Roles Page

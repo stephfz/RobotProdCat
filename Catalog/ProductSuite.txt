@@ -1,11 +1,8 @@
 *** Settings ***
 Resource          prodcat_resource.txt
+Resource          ../datainput.txt
 
 
-*** Variables ***
-${catalog_name}   CigniumCatalog
-${category_name}   aNewCategory
-${product_name}   NewProduct
 
 
 *** Test Cases ***
