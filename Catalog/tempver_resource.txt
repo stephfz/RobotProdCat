@@ -21,8 +21,9 @@ Save Version
 
 Select Version To Archive
     [Arguments]    ${short_effective_date}
-    Click Element    xpath=//span[contains(text(), '${short_effective_date}')]
-    Click Button    css=i.icon-remove-sign
+    Click Element    xpath=//span[contains(text(), '${short_effective_date}')]   
+    #Click Button    css=i.icon-remove-sign --not getting to the button by css selector TODO: title selector
+    Click Button    xpath=//div[@id='fullscreen-wrapper']/div/div/div/div/ul/li[2]/button[3]
     Click Button    css=div.messageContents > nav.inline-toolbar > button
 
 Verify New Version Created
@@ -35,5 +36,5 @@ Verify New Version cannot be created
     Page Should Contain Element    ${TEMPVER.ALERT_SECTION}
 
 Verify Version has been archived
-    [Arguments] ${effectivefromdateshort}
+    [Arguments]    ${effectivefromdateshort}
     Page Should Not Contain Element    xpath=//span[contains(text(), '${effectivefromdateshort}')]
