@@ -11,10 +11,12 @@ Edit Product
     Open Products List
     Click Element    xpath=//span[contains(text(), '${productName}')]
     Click Button    ${PRODLIST.EDIT_BUTTON}
+    
+    
 
 Fill Up New Version Form
     [Arguments]    ${effectivefromdate}    ${effectiveuntildate}
-    Click Element    ${PRODCAT.CREATE_NEW_VERSION}
+    Click Element    ${TEMPVER.NEW_VERSION_BUTTON}
 
 Save Version
     Click Button    ${TEMPVER.VERSION_SAVE}
@@ -30,7 +32,9 @@ Verify New Version Created
     [Arguments]    ${effectivefromdateshort}
     Wait Until Element Is Visible    xpath=//span[contains(text(), '${effectivefromdateshort}')]
 
+#New Version cannot be created : New Version button is not visible
 Verify New Version cannot be created
+    [Arguments]    ${effectivefromdate}    ${effectiveuntildate}
     Fill Up New Version Form
     Save Version
     Page Should Contain Element    ${TEMPVER.ALERT_SECTION}

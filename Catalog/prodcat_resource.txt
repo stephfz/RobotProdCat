@@ -12,11 +12,11 @@ Open Product Composer
 
 Fill Up Catalog Form
     [Arguments]    ${catalogname}
-    Click Element    ${PRODCAT.CREATE_CATALOG}
+    Click Element    ${PRODCAT.CREATE_CATALOG_BUTTON}
     Input Text    ${PRODCAT.CATALOG_NAME_INPUT}    ${catalogname}
 
 Save New Catalog
-    Click Button    ${PRODCAT.SAVE_BUTTON}
+    Click Button    ${PRODCAT.SAVE_CATALOG_BUTTON}
 
 Verify Catalog has been created
     [Arguments]    ${catalogname}
@@ -29,7 +29,7 @@ Fill Up Category Form
     Input Text    category-name    ${categoryName}
 
 Save New Product Category
-    Click Button    ${PRODCAT.SAVE_CATEGORY}
+    Click Button    ${PRODCAT.SAVE_CATEGORY_BUTTON}
 
 Open Schema
     Click Element    ${LEFTMENU.SCHEMA}
@@ -44,7 +44,7 @@ Fill Up Product Form
     [Arguments]    ${productName}    ${categoryName}
     Input Text    ${PRODCAT.PRODUCT_NAME_INPUT}    ${productName}
     Select From List    ${PRODCAT.CATALOG_CATEGORIES_LIST}    Root » ${categoryName}
-    Click Element    ${PRODCAT.CREATE_PRODUCT}
+    Click Element    ${PRODCAT.LAUNCH_PRODUCT_BUTTON}
 
 Save Draft Product Version
     Click Element    ${TEMPVER.SAVE_VERSION}
