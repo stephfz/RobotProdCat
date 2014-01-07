@@ -3,14 +3,12 @@
 
 
 *** Variables ***
-#UI Elements
+#Product Catalog > Catalog
 ${PRODCAT.CREATE_CATALOG_BUTTON}    css=i.icon-plus-sign
 ${PRODCAT.CATALOG_NAME_INPUT}    catalog-name
 ${PRODCAT.CATALOG_DESCRIPTION_INPUT}    catalog-description
 ${PRODCAT.SAVE_CATALOG_BUTTON}    btnSaveProductCatalog
-
-
-
+#Product Catalog > Schema > Category
 ${PRODCAT.SAVE_CATEGORY_BUTTON}    btnSaveCategory
 ${PRODCAT.LAUNCH_PRODUCT_BUTTON}    css=i.icon-save
 
@@ -18,15 +16,33 @@ ${PRODCAT.PRODUCT_NAME_INPUT}   product-name
 ${PRODCAT.CATALOG_CATEGORIES_LIST}    product-template-category
 
 
+#LifeCycle Page
+${SCHEMA.ADD_FIRST_STAGE}    css=button.add-stage-before
 
 
+
+#Temporal Versioning Page
+${TEMPVER.PRODUCT_NAME}    css=div.column-right > div.content.vbox-wrapper > h1.heading > span
 ${TEMPVER.SAVE_VERSION}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[3]
 ${TEMPVER.BACK_BUTTON}    xpath=//a[@class='back-button']
-
-
 ${TEMPVER.VERSION_EFFECTIVE_FROM}    effective_start
 ${TEMPVER.VERSION_EFFECTIVE_UNTIL}    effective_until
 ${TEMPVER.VERSION_SAVE}    xpath=id('modal-wrapper')/div/form/fieldset[2]/nav/button[1]
 ${TEMPVER.NEW_VERSION_BUTTON}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[4]
 ${PRODLIST.EDIT_BUTTON}    //div[@id='applicationHost']/div/div/section/div/h1/nav/button[1]
 ${TEMPVER.ALERT_SECTION}    css=div.action-alert.error
+
+
+#Facet Templates Page
+${FACET.CREATE}    new_data_template
+${FACET.FORM.NAME}    new-name
+${FACET.FORM.DESCRIPTION}    description
+${FACET.FORM.CREATE_PROPERTY}    btnFacetTemplateAddProperty
+${FACET.FORM.SAVE}    btnSaveFacetTemplate
+
+#New Property Form
+${PROPERTY.TYPE_LIST}    type
+${PROPERTY.NAME_INPUT}    css=#property-properties > div.field > input[type="text"]
+${PROPERTY.SAVE_BUTTON}    btnSaveProperty
+${PROPERTY.ISREQUIRED_CHECKBOX}    xpath=//span[contains(text(), 'Required')]
+${PROPERTY.ISUNIQUE_CHECKBOX}    xpath=//span[contains(text(), 'Unique')]

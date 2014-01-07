@@ -8,4 +8,9 @@ Library           Selenium2Library
 
 *** Keywords ***
 Open Roles Page
-    Click Link    Roles 
+    Wait Until Page Contains Element    xpath=//span[contains(text(), 'Roles')]
+    Click Link    Roles
+
+Edit Role
+    [Arguments]    ${roleName} 
+    Click Element    xpath=//span[contains(text(), '${roleName}')]

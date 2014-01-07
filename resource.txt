@@ -3,13 +3,14 @@ Library           Selenium2Library
 
 *** Variables ***
 ${BROWSER}        Chrome
-${DELAY}          1
+${DELAY}          0
 ${LOGIN URL}      http://dtv.plm.com:1234
 #UI Elements
 
 ${LOGIN_PAGE.USERNAME_INPUT}    username
 ${LOGIN_PAGE.PASSWORD_INPUT}    password
 ${LOGIN_PAGE.SUBMIT_BUTTON}    css=input[type='submit']
+${LOGIN_PAGE.TITLE}    Composer
 
 ${INITIAL_PAGE.TITLE}    Create New Catalog | Composer
 
@@ -23,7 +24,7 @@ Open Browser To Login Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
-    Title Should Be    Composer
+    Title Should Be    ${LOGIN_PAGE.TITLE}
 
 Login as
     [Arguments]    ${username}    ${password}
@@ -31,4 +32,4 @@ Login as
     Input Text    ${LOGIN_PAGE.USERNAME_INPUT}    ${username}
     Input Text    ${LOGIN_PAGE.PASSWORD_INPUT}    ${password}
     Click Element    ${LOGIN_PAGE.SUBMIT_BUTTON}
-    Title Should be   ${INITIAL_PAGE.TITLE}
+

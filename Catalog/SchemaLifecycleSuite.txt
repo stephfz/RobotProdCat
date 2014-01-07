@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          prodcat_resource.txt
+Resource          ../datainput.txt
+
+
+*** Test Cases *** 
+
+[TestSetup]
+    Login as    Dan    Dan
+
+
+Create Custom LifeCycle
+    Edit Root Lifecycle
+

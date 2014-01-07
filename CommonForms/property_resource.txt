@@ -1,0 +1,20 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../resource.txt
+Resource          ../UI_map.txt
+
+
+*** Keywords ***
+Fill Up Property Form
+   [Arguments]    ${propertytype}    ${propertyname}    ${isrequired}    ${isunique}
+    Select From List    ${PROPERTY.TYPE_LIST}    ${propertytype}
+    Input Text    ${PROPERTY.NAME_INPUT}    ${propertyname}
+    Run Keyword if    '${isrequired}'=='isRequired'    Mark as Required
+    Run Keyword if    '${isunique}'=='isUnique'    Mark as Unique
+    Click Button    ${PROPERTY.SAVE_BUTTON}
+
+Mark as Required
+    Click Element    ${PROPERTY.ISREQUIRED_CHECKBOX}
+
+Mark as Unique
+    Click Element    ${PROPERTY.ISUNIQUE_CHECKBOX}

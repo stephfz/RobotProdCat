@@ -1,0 +1,30 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../resource.txt
+Resource          ../UI_map.txt
+Resource          ../CommonForms/property_resource.txt
+
+
+
+*** Keywords ***
+Open Facets  
+    Click Element    ${LEFTMENU.FACETS}
+
+Fill Up Facet Form
+    [Arguments]    ${facetname}    ${facetdescription}
+    Click Button    ${FACET.CREATE}
+    Input Text    ${FACET.FORM.NAME}    ${facetname}
+    Input Text    ${FACET.FORM.DESCRIPTION}    ${facetdescription}
+
+Save Facet
+    Click Button    ${FACET.FORM.SAVE}
+
+Add Property
+    [Arguments]    ${propertytype}    ${propertyname}    ${isrequired}    ${isunique}
+    Click Button    ${FACET.FORM.CREATE_PROPERTY}
+    Fill Up Property Form    ${propertytype}    ${propertyname}    ${isrequired}    ${isunique}
+
+
+Verify Facet was created
+    [Arguments]    ${facetname}
+    Wait Until Page Contains Element    xpath=//span[contains(text(), '${facetname}')]

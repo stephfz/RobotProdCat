@@ -12,11 +12,13 @@ Open Product Composer
 
 Fill Up Catalog Form
     [Arguments]    ${catalogname}
+    Wait Until Page Contains Element    ${PRODCAT.CREATE_CATALOG_BUTTON}
     Click Element    ${PRODCAT.CREATE_CATALOG_BUTTON}
     Input Text    ${PRODCAT.CATALOG_NAME_INPUT}    ${catalogname}
 
 Save New Catalog
     Click Button    ${PRODCAT.SAVE_CATALOG_BUTTON}
+    Wait Until Page Contains Element    xpath=//span[contains(text(), '${catalogname}')] 
 
 Verify Catalog has been created
     [Arguments]    ${catalogname}
@@ -24,13 +26,18 @@ Verify Catalog has been created
 
 Fill Up Category Form
     [Arguments]    ${categoryName}
+    Wait Until Page Contains Element    xpath=//div[@class='tree-node-main']    
     Click Element    xpath=//div[@class='tree-node-main']
+    Element Should Not Be Visible    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
     Click Element    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
+    Wait Until Page Contains Element    category-name 
     Input Text    category-name    ${categoryName}
 
 Save New Product Category
     Click Button    ${PRODCAT.SAVE_CATEGORY_BUTTON}
+    Wait Until Page Contains Element    xpath=//div[@class='tree-node leaf'] 
 
+    
 Open Schema
     Click Element    ${LEFTMENU.SCHEMA}
 

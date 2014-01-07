@@ -2,6 +2,7 @@
 Library           Selenium2Library
 Resource          prodcat_resource.txt
 Resource          ../resource.txt
+Resource          ../UI_map.txt
 
 
 
@@ -11,7 +12,7 @@ Edit Product
     Open Products List
     Click Element    xpath=//span[contains(text(), '${productName}')]
     Click Button    ${PRODLIST.EDIT_BUTTON}
-    
+    Element Text Should Be    ${TEMPVER.PRODUCT_NAME}    ${productName}  
     
 
 Fill Up New Version Form
@@ -34,10 +35,7 @@ Verify New Version Created
 
 #New Version cannot be created : New Version button is not visible
 Verify New Version cannot be created
-    [Arguments]    ${effectivefromdate}    ${effectiveuntildate}
-    Fill Up New Version Form
-    Save Version
-    Page Should Contain Element    ${TEMPVER.ALERT_SECTION}
+
 
 Verify Version has been archived
     [Arguments]    ${effectivefromdateshort}

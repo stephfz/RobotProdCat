@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          resource.txt
+Resource          facettemplate_resource.txt
 Resource          ../datainput.txt
 
 
