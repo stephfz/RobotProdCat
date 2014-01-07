@@ -28,7 +28,7 @@ Fill Up Category Form
     [Arguments]    ${categoryName}
     Wait Until Page Contains Element    xpath=//div[@class='tree-node-main']    
     Click Element    xpath=//div[@class='tree-node-main']
-    Element Should Not Be Visible    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
+    Wait Until Element Is Visible    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
     Click Element    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
     Wait Until Page Contains Element    category-name 
     Input Text    category-name    ${categoryName}
@@ -43,6 +43,8 @@ Open Schema
 
 Open Launch Product
     Click Element    ${LEFTMENU.LAUNCH_PRODUCT}
+    Wait Until Page Contains    Launch New Product
+    
 
 Open Products List
     Click Element    ${LEFTMENU.PRODUCTS}
@@ -52,9 +54,11 @@ Fill Up Product Form
     Input Text    ${PRODCAT.PRODUCT_NAME_INPUT}    ${productName}
     Select From List    ${PRODCAT.CATALOG_CATEGORIES_LIST}    Root » ${categoryName}
     Click Element    ${PRODCAT.LAUNCH_PRODUCT_BUTTON}
+    Wait Until Page Contains Element    xpath=//span[contains(text(), '${productName}')]
 
 Save Draft Product Version
     Click Element    ${TEMPVER.SAVE_VERSION}
+    Wait Until Page Contains Element    ${TEMPVER.NEW_VERSION_BUTTON} 
 
 Verify Product is Listed on Live Products List
     [Arguments]    ${productName}

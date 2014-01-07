@@ -1,0 +1,18 @@
+*** Settings ***
+Resource          usermanagement_resource.txt
+Resource          ../datainput.txt
+
+
+*** Test Cases ***
+[TestSetup]
+    Login as    Kip    Kip
+
+
+Set Permissions to Manager
+    Open Roles Page
+    Edit Role    Manager
+
+
+
+[Teardown]
+    Close Browser

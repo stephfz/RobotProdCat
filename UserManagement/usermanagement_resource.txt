@@ -1,5 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
+Resource          ../resource.txt
 
 
 *** Variables ***
@@ -8,9 +9,23 @@ Library           Selenium2Library
 
 *** Keywords ***
 Open Roles Page
-    Wait Until Page Contains Element    xpath=//span[contains(text(), 'Roles')]
+	Wait Until Page Contains Element   xpath=//div[@class='avatar']    
     Click Link    Roles
+
 
 Edit Role
     [Arguments]    ${roleName} 
+    Wait Until Element Is Visible    role-name   
     Click Element    xpath=//span[contains(text(), '${roleName}')]
+    Click Element    xpath=//span[contains(text(), 'Global Search')]
+	Click Element    xpath=//span[contains(text(), 'Product Data Entry')]    
+    Click Element    xpath=//span[contains(text(), 'Lifecycles Modeler')]
+    Click Element    xpath=//span[contains(text(), 'Price Line Modeler')]
+    Click Element    xpath=//span[contains(text(), 'Reference Data Modeler')]
+    Click Element    xpath=//span[contains(text(), 'Rules Modeler')]
+    Save Changes
+
+
+Save Changes
+    Click Button   btnSaveRole   
+
