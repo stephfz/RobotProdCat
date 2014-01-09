@@ -10,7 +10,7 @@ Resource          ../datainput.txt
 
 Create New Facet
     Open Facets
-    Fill Up Facet Form    ${facet_name}    TestFacet
+    Fill Up Facet Form    ${facet_name}    ${facet_description}
     Add Property    Date    MyDate    isRequired    notUnique
     Add Property    Decimal    MyDec    isRequired    notUnique
     Add Property    String    MyString    isRequired    notUnique

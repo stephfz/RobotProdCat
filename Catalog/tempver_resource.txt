@@ -8,16 +8,22 @@ Resource          ../UI_map.txt
 
 *** Keywords ***
 Edit Product
-    [Arguments]    ${catalogName}    ${productName}  
+    [Arguments]    ${catalogName}    ${productName}
+    Wait Until Element Is Visible    xpath=//span[contains(text(), '${catalogName}')]  
     Open Products List
+    Wait Until Element Is Visible    xpath=//span[contains(text(), '${productName}')]
     Click Element    xpath=//span[contains(text(), '${productName}')]
+    Wait Until Element Is Visible    ${PRODLIST.EDIT_BUTTON}
     Click Button    ${PRODLIST.EDIT_BUTTON}
-    Element Text Should Be    ${TEMPVER.PRODUCT_NAME}    ${productName}  
+    Wait Until Page Contains Element    ${TEMPVER.NEW_VERSION_BUTTON}
+      
     
 
 Fill Up New Version Form
     [Arguments]    ${effectivefromdate}    ${effectiveuntildate}
     Click Element    ${TEMPVER.NEW_VERSION_BUTTON}
+    #TODO: pick dates
+    Wait Until Page Contains Element    ${TEMPVER.VERSION_EFFECTIVE_FROM}
 
 Save Version
     Click Button    ${TEMPVER.VERSION_SAVE}
@@ -35,7 +41,8 @@ Verify New Version Created
 
 #New Version cannot be created : New Version button is not visible
 Verify New Version cannot be created
-
+    Page Should Not Contain Element    ${TEMPVER.NEW_VERSION_BUTTON}
+    
 
 Verify Version has been archived
     [Arguments]    ${effectivefromdateshort}

@@ -32,4 +32,11 @@ Login as
     Input Text    ${LOGIN_PAGE.USERNAME_INPUT}    ${username}
     Input Text    ${LOGIN_PAGE.PASSWORD_INPUT}    ${password}
     Click Element    ${LOGIN_PAGE.SUBMIT_BUTTON}
+    Element Should Not Be Visible   xpath=//div[@id='login-error']
+    Wait Until Page Contains Element   xpath=//div[@class='avatar']  
 
+
+Wait For Element and Click
+    [Arguments]    ${element}
+    Wait Until Page Contains Element    ${element}
+    Click Element    ${element}

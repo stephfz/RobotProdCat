@@ -8,7 +8,7 @@ Resource          ../CommonForms/property_resource.txt
 
 *** Keywords ***
 Open Facets  
-    Click Element    ${LEFTMENU.FACETS}
+    Wait For Element and Click    ${LEFTMENU.FACETS}
 
 Fill Up Facet Form
     [Arguments]    ${facetname}    ${facetdescription}

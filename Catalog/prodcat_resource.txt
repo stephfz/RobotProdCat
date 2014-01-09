@@ -6,14 +6,13 @@ Resource          ../UI_map.txt
 
 
 
-*** Keywords ***
+*** Keywords ***n
 Open Product Composer
     Click Link    Product Composer
 
 Fill Up Catalog Form
-    [Arguments]    ${catalogname}
-    Wait Until Page Contains Element    ${PRODCAT.CREATE_CATALOG_BUTTON}
-    Click Element    ${PRODCAT.CREATE_CATALOG_BUTTON}
+    [Arguments]    ${catalogname}    
+    Wait For Element and Click    ${PRODCAT.CREATE_CATALOG_BUTTON}
     Input Text    ${PRODCAT.CATALOG_NAME_INPUT}    ${catalogname}
 
 Save New Catalog
@@ -26,12 +25,14 @@ Verify Catalog has been created
 
 Fill Up Category Form
     [Arguments]    ${categoryName}
-    Wait Until Page Contains Element    xpath=//div[@class='tree-node-main']    
-    Click Element    xpath=//div[@class='tree-node-main']
+    #Wait for Root Node and click
+    Wait For Element and Click    ${SCHEMA.ROOT_CATEGORY}       
+    #Wait for Icon bar on root Node, click on Add Category
     Wait Until Element Is Visible    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
+    #Add Category
     Click Element    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
-    Wait Until Page Contains Element    category-name 
-    Input Text    category-name    ${categoryName}
+    Wait Until Page Contains Element    ${PRODCAT.CATEGORY_NAME_INPUT} 
+    Input Text    ${PRODCAT.CATEGORY_NAME_INPUT}    ${categoryName}
 
 Save New Product Category
     Click Button    ${PRODCAT.SAVE_CATEGORY_BUTTON}
@@ -61,8 +62,7 @@ Save Draft Product Version
     Wait Until Page Contains Element    ${TEMPVER.NEW_VERSION_BUTTON} 
 
 Verify Product is Listed on Live Products List
-    [Arguments]    ${productName}
-    Wait Until Page Contains Element    ${TEMPVER.BACK_BUTTON}
-    Click Element    ${TEMPVER.BACK_BUTTON}
+    [Arguments]    ${productName}   
+    Wait For Element and Click    ${TEMPVER.BACK_BUTTON}
     Open Products List
     Wait Until Page Contains Element    xpath=//span[contains(text(), '${productName}')]

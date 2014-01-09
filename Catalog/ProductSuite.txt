@@ -9,10 +9,10 @@ Resource          ../datainput.txt
 [TestSetup]
     Login as    Dan    Dan
 
-New Catalog
+Create New Catalog
     Fill Up Catalog Form    ${catalog_name}
     Save New Catalog
-    Verify Catalog has been created    ${catalog_name}
+    Verify Catalog has been created    Catalog
 
 Add Category to Catalog
     Open Schema

@@ -1,0 +1,8 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../resource.txt
+Resource          ../UI_map.txt
+
+
+
+Edit Root Lifecycle

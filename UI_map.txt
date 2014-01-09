@@ -9,6 +9,7 @@ ${PRODCAT.CATALOG_NAME_INPUT}    catalog-name
 ${PRODCAT.CATALOG_DESCRIPTION_INPUT}    catalog-description
 ${PRODCAT.SAVE_CATALOG_BUTTON}    btnSaveProductCatalog
 #Product Catalog > Schema > Category
+${PRODCAT.CATEGORY_NAME_INPUT}    category-name	
 ${PRODCAT.SAVE_CATEGORY_BUTTON}    btnSaveCategory
 ${PRODCAT.LAUNCH_PRODUCT_BUTTON}    css=i.icon-save
 
@@ -17,6 +18,7 @@ ${PRODCAT.CATALOG_CATEGORIES_LIST}    product-template-category
 
 
 #LifeCycle Page
+${SCHEMA.ROOT_CATEGORY}    xpath=//div[@class='tree-node-main'] 
 ${SCHEMA.ADD_FIRST_STAGE}    css=button.add-stage-before
 
 
