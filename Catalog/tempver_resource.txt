@@ -1,24 +1,19 @@
 *** Settings ***
 Library           Selenium2Library
 Resource          prodcat_resource.txt
-Resource          ../resource.txt
+Resource          ../global_resource.txt
 Resource          ../UI_map.txt
 
 
 
 *** Keywords ***
 Edit Product
-    [Arguments]    ${catalogName}    ${productName}
-    Wait Until Element Is Visible    xpath=//span[contains(text(), '${catalogName}')]  
+    [Arguments]    ${catalogName}    ${productName}   
     Open Products List
-    Wait Until Element Is Visible    xpath=//span[contains(text(), '${productName}')]
-    Click Element    xpath=//span[contains(text(), '${productName}')]
-    Wait Until Element Is Visible    ${PRODLIST.EDIT_BUTTON}
-    Click Button    ${PRODLIST.EDIT_BUTTON}
+    Wait For Element Visible and Click    xpath=//span[contains(text(), '${productName}')]
+    Wait For Element Visible and Click     ${PRODLIST.EDIT_BUTTON}  
     Wait Until Page Contains Element    ${TEMPVER.NEW_VERSION_BUTTON}
-      
-    
-
+        
 Fill Up New Version Form
     [Arguments]    ${effectivefromdate}    ${effectiveuntildate}
     Click Element    ${TEMPVER.NEW_VERSION_BUTTON}
@@ -27,13 +22,17 @@ Fill Up New Version Form
 
 Save Version
     Click Button    ${TEMPVER.VERSION_SAVE}
+    Wait for Element To Not Be Visible   ${TEMPVER.VERSION_EFFECTIVE_FROM} 
+
 
 Select Version To Archive
     [Arguments]    ${short_effective_date}
     Click Element    xpath=//span[contains(text(), '${short_effective_date}')]   
     #Click Button    css=i.icon-remove-sign --not getting to the button by css selector TODO: title selector
     Click Button    xpath=//div[@id='fullscreen-wrapper']/div/div/div/div/ul/li[2]/button[3]
-    Click Button    css=div.messageContents > nav.inline-toolbar > button
+    Wait For Element Visible and Click    css=div.messageContents > nav.inline-toolbar > button
+    #wait for modal to be closed
+    Verify Element Not Present by Xpath    //div[@class='messageContents']
 
 Verify New Version Created
     [Arguments]    ${effectivefromdateshort}
@@ -45,5 +44,17 @@ Verify New Version cannot be created
     
 
 Verify Version has been archived
-    [Arguments]    ${effectivefromdateshort}
-    Page Should Not Contain Element    xpath=//span[contains(text(), '${effectivefromdateshort}')]
+    [Arguments]    ${effectivefromdateshort}      
+    #Page Should Not Contain Element    xpath=//span[contains(text(), '${effectivefromdateshort}')]
+    Verify Element Not Present by Xpath   //span[contains(text(), '${effectivefromdateshort}')]
+
+
+Leave Temporal Versioning Page   
+    #hit back button
+    Click Element    ${TEMPVER.BACK_BUTTON}
+    #unsaved changes
+
+
+Open Catalog
+    [Arguments]    ${catalogname}
+    Wait For Element Visible and Click    xpath=//span[contains(text(), '${catalogname}')]

@@ -1,0 +1,26 @@
+*** Settings ***
+Resource          prodcat_resource.txt
+Resource          ../datainput.txt
+Suite Setup          Login as    Dan    Dan 
+Suite Teardown          Log Out
+
+
+*** Test Cases ***
+Create New Catalog
+    Fill Up Catalog Form    ${catalog_name}
+    Save New Catalog
+    Verify Catalog has been created    ${catalog_name}
+
+Add Category to Catalog
+    Open Schema
+    Fill Up Category Form    ${category_name}
+    Save New Product Category
+
+Launch Product
+    Open Launch Product
+    Fill Up Product Form    ${product_name}    ${category_name}
+    Save Draft Product Version
+    Verify Product is Listed on Live Products List    ${product_name}
+
+
+

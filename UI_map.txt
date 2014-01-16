@@ -17,10 +17,12 @@ ${PRODCAT.PRODUCT_NAME_INPUT}   product-name
 ${PRODCAT.CATALOG_CATEGORIES_LIST}    product-template-category
 
 
-#LifeCycle Page
+#Catalog Schema Page
 ${SCHEMA.ROOT_CATEGORY}    xpath=//div[@class='tree-node-main'] 
 ${SCHEMA.ADD_FIRST_STAGE}    css=button.add-stage-before
 
+
+#LifeCycle Versioning Page
 
 
 #Temporal Versioning Page
@@ -33,6 +35,7 @@ ${TEMPVER.VERSION_SAVE}    xpath=id('modal-wrapper')/div/form/fieldset[2]/nav/bu
 ${TEMPVER.NEW_VERSION_BUTTON}    xpath=//div[@id='fullscreen-wrapper']/div/div/div[2]/div/h1/nav/button[4]
 ${PRODLIST.EDIT_BUTTON}    //div[@id='applicationHost']/div/div/section/div/h1/nav/button[1]
 ${TEMPVER.ALERT_SECTION}    css=div.action-alert.error
+${TEMPVER.DESIGN_TAB}   Design
 
 
 #Facet Templates Page

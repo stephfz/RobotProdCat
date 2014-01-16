@@ -1,0 +1,66 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Variables ***
+${BROWSER}        Chrome
+${DELAY}          0
+${LOGIN URL}      http://dtv.plm.com:1234
+#UI Elements
+
+${LOGIN_PAGE.USERNAME_INPUT}    username
+${LOGIN_PAGE.PASSWORD_INPUT}    password
+${LOGIN_PAGE.SUBMIT_BUTTON}    css=input[type='submit']
+${LOGIN_PAGE.TITLE}    Composer
+${LOGIN_PAGE.LOGIN_ERROR_MSG}    xpath=//div[@id='login-error']     
+
+
+
+${INITIAL_PAGE.TITLE}    Create New Catalog | Composer
+${INITIAL_PAGE.USER_AVATAR}   xpath=//div[@class='avatar']
+
+${LEFTMENU.SCHEMA}    css=i.icon-sitemap
+${LEFTMENU.LAUNCH_PRODUCT}    css=i.icon-rocket
+${LEFTMENU.PRODUCTS}    xpath=//span[contains(text(), 'Products')]
+${LEFTMENU.FACETS}    xpath=//span[contains(text(), 'Facets')]
+
+*** Keywords ***
+Open Browser To Login Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Title Should Be    ${LOGIN_PAGE.TITLE}
+
+Login as
+    [Arguments]    ${username}    ${password}
+    Open Browser To Login Page
+    Input Text    ${LOGIN_PAGE.USERNAME_INPUT}    ${username}
+    Input Text    ${LOGIN_PAGE.PASSWORD_INPUT}    ${password}
+    Click Element    ${LOGIN_PAGE.SUBMIT_BUTTON}
+    #Element Should Not Be Visible   ${LOGIN_PAGE.LOGIN_ERROR_MSG}
+    Wait Until Page Contains Element   ${INITIAL_PAGE.USER_AVATAR}
+
+Log Out
+    Click Link    Logout  
+    Title Should Be    ${LOGIN_PAGE.TITLE}
+
+
+Wait For Element and Click
+    [Arguments]    ${element}
+    Wait Until Page Contains Element    ${element}
+    Click Element    ${element}
+
+
+Wait For Element Visible and Click
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}
+    Click Element    ${element} 
+
+Verify Element Not Present by Xpath
+    [Arguments]    ${xpathlocator}      
+    Wait For Condition   return document.evaluate("${xpathlocator}", document.documentElement, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotLength === 0
+
+
+Wait for Element To Not Be Visible
+    [Arguments]    ${elementHTMLId}
+    Wait For Condition   return document.getElementById("${elementHTMLId}") === null
+

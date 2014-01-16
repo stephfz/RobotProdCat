@@ -1,18 +1,22 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          ../resource.txt
+Resource          ../global_resource.txt
 Resource          ../UI_map.txt
 
 
 
 
-*** Keywords ***n
+*** Keywords ***
 Open Product Composer
     Click Link    Product Composer
 
+
 Fill Up Catalog Form
     [Arguments]    ${catalogname}    
-    Wait For Element and Click    ${PRODCAT.CREATE_CATALOG_BUTTON}
+    Wait For Element Visible and Click    ${PRODCAT.CREATE_CATALOG_BUTTON}
+    #wait for "new" condition
+    Wait For Element Visible and Click    ${PRODCAT.CATALOG_NAME_INPUT}
+    #Wait For Condition   return document.getElementById("catalog-name").value === ""
     Input Text    ${PRODCAT.CATALOG_NAME_INPUT}    ${catalogname}
 
 Save New Catalog
@@ -28,15 +32,14 @@ Fill Up Category Form
     #Wait for Root Node and click
     Wait For Element and Click    ${SCHEMA.ROOT_CATEGORY}       
     #Wait for Icon bar on root Node, click on Add Category
-    Wait Until Element Is Visible    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
-    #Add Category
-    Click Element    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]
+    Wait For Element Visible and Click    xpath=//div[@id='help-step4']/div/div/div/div/div/div/div/nav/button[2]   
     Wait Until Page Contains Element    ${PRODCAT.CATEGORY_NAME_INPUT} 
     Input Text    ${PRODCAT.CATEGORY_NAME_INPUT}    ${categoryName}
 
 Save New Product Category
     Click Button    ${PRODCAT.SAVE_CATEGORY_BUTTON}
-    Wait Until Page Contains Element    xpath=//div[@class='tree-node leaf'] 
+    #wait for node with new category created to be visible on schema
+    Wait Until Page Contains Element    //div[@class="tree-children clearfix"]//div[@class="tree-child clearfix"]//div[@class="tree-node-main"]//h1[text()='${categoryName}']
 
     
 Open Schema

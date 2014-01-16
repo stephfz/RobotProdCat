@@ -20,3 +20,18 @@ Create New Facet
 
 [Teardown]
     Close Browser
+
+#Boolean
+#Date
+#Decimal
+#E-mail
+#Feature
+#File
+#Money
+#Option
+#Property Group
+#Ranges
+#Reference Data
+#String
+#Text
+#Url

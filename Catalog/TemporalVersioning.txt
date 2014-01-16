@@ -10,19 +10,21 @@ Resource          ../datainput.txt
     Login as    Dan    Dan
 
 Create New Version
+	Open Catalog   ${catalog_name} 
     Edit Product    ${catalog_name}    ${product_name}
     Fill Up New Version Form    ${version_start_date}    ${EMPTY}
     Save Version
-    Verify New Version Created    ${short_effective_date}
+    Verify New Version Created    ${short_day_after_date}
 
 Archive Version
     Select Version To Archive    ${short_day_after_date}
     Verify Version has been archived    ${short_day_after_date}
 
-Create Final Version
-    Fill Up New Version Form    ${version_start_date}    ${version_start_date}
-    Save Version
-    Verify New Version cannot be created
+#Create Final Version
+#    Fill Up New Version Form    ${version_start_date}    ${version_start_date}
+#    Save Version
+#    Verify New Version cannot be created
 
 [Teardown]
-    Close Browser
+    Log Out
+

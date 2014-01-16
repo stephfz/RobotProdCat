@@ -1,8 +1,9 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          ../resource.txt
+Resource          ../global_resource.txt
 Resource          ../UI_map.txt
 
 
 
-Edit Root Lifecycle
+Edit Category Lifecycle
+	

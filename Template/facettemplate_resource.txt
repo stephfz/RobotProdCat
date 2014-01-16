@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          ../resource.txt
+Resource          ../global_resource.txt
 Resource          ../UI_map.txt
 Resource          ../CommonForms/property_resource.txt
 
@@ -8,11 +8,11 @@ Resource          ../CommonForms/property_resource.txt
 
 *** Keywords ***
 Open Facets  
-    Wait For Element and Click    ${LEFTMENU.FACETS}
+    Wait For Element Visible and Click    ${LEFTMENU.FACETS}
 
 Fill Up Facet Form
     [Arguments]    ${facetname}    ${facetdescription}
-    Click Button    ${FACET.CREATE}
+    Wait For Element Visible and Click    ${FACET.CREATE}
     Input Text    ${FACET.FORM.NAME}    ${facetname}
     Input Text    ${FACET.FORM.DESCRIPTION}    ${facetdescription}
 
