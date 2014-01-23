@@ -45,16 +45,14 @@ Save New Product Category
 Open Schema
     Click Element    ${LEFTMENU.SCHEMA}
 
-Open Launch Product
-    Click Element    ${LEFTMENU.LAUNCH_PRODUCT}
-    Wait Until Page Contains    Launch New Product
-    
-
 Open Products List
     Click Element    ${LEFTMENU.PRODUCTS}
+    Wait Until Page Contains Element    ${PRODCAT.CREATE_PRODUCT_BUTTON}
 
 Fill Up Product Form
     [Arguments]    ${productName}    ${categoryName}
+    Click Element    ${PRODCAT.CREATE_PRODUCT_BUTTON}
+    Wait Until Element Is Visible     ${PRODCAT.PRODUCT_NAME_INPUT} 
     Input Text    ${PRODCAT.PRODUCT_NAME_INPUT}    ${productName}
     Select From List    ${PRODCAT.CATALOG_CATEGORIES_LIST}    Root » ${categoryName}
     Click Element    ${PRODCAT.LAUNCH_PRODUCT_BUTTON}

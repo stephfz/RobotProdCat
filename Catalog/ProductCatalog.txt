@@ -17,7 +17,7 @@ Add Category to Catalog
     Save New Product Category
 
 Launch Product
-    Open Launch Product
+    Open Products List
     Fill Up Product Form    ${product_name}    ${category_name}
     Save Draft Product Version
     Verify Product is Listed on Live Products List    ${product_name}
