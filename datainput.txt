@@ -8,13 +8,13 @@ ${product_name}   NewProduct
 #Temporal Versioning
 *** Variables ***
 #python: now.strftime("%b %d, %Y")
-${version_start_date}    January 16, 2014
+${version_start_date}    January 22, 2014
 ${version_end_date}    January 31, 2014
-${start_date_month}    January 18, 2014
-${start_date_day}    18
+${start_date_month}    January 22, 2014
+${start_date_day}    17
 ${start_date_year}    ${EMPTY}
-${short_effective_date}    Jan 16, 2014
-${short_day_after_date}    Jan 17, 2014
+${short_effective_date}    Jan 22, 2014
+${short_day_after_date}    Jan 23, 2014
 
 
 
